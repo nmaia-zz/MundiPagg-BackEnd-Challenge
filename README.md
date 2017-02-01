@@ -11,6 +11,6 @@ In this repository we'll develop a very small system using the following stack:
 * [MongoDB](https://www.mongodb.com/) (a NoSQL Database);
 * [ElasticSearch](https://www.elastic.co/) (a data search engine).
 
-I hope this code can be helpful to you, as it is for me. :metal:
+I hope this code can be useful to you, as it is for me. :metal:
 
 Let's code! :trollface:
