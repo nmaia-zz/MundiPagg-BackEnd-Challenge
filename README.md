@@ -13,7 +13,7 @@ In this repository we'll develop a very small system using the following stack:
 
 # UML
 
-### POCO (Plain Old C# Object) - Class Diagram v.1.0
+### POCO (Plain Old C# Object) - Class Diagram v.1.1
 
 ![Class Diagram v1.0](https://github.com/nmaia/MundiPagg-BackEnd-Challenge/blob/master/Images/UML/ClassDiagram_1.1.png)
 
