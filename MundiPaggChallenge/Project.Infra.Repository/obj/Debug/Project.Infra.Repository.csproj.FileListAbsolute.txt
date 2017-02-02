@@ -1,0 +1,5 @@
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\bin\Debug\Project.Infra.Repository.dll
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\bin\Debug\Project.Infra.Repository.pdb
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\obj\Debug\Project.Infra.Repository.csprojResolveAssemblyReference.cache
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\obj\Debug\Project.Infra.Repository.dll
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\obj\Debug\Project.Infra.Repository.pdb
