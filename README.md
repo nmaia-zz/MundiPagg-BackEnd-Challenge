@@ -8,14 +8,14 @@ In this repository we'll develop a very small system using the following stack:
 * [C# .Net](https://msdn.microsoft.com/en-us/library/kx37x362.aspx) (as the back-end language);
 * [Web API](https://msdn.microsoft.com/en-us/library/hh833994(v=vs.108).aspx) (using the Restful concept);
 * [Angular](https://angularjs.org/) (a JavaScript framework for the front-end);
-* [MongoDB](https://www.mongodb.com/) (a NoSQL Database);
+* ~~[MongoDB](https://www.mongodb.com/) (a NoSQL Database)~~;
 * [ElasticSearch](https://www.elastic.co/) (a data search engine).
 
 # UML
 
-### POCO (Plain Old C# Object) - Class Diagram v.1.1
+### POCO (Plain Old C# Object) - Class Diagram v.1.2
 
-![Class Diagram v1.0](https://github.com/nmaia/MundiPagg-BackEnd-Challenge/blob/master/Images/UML/ClassDiagram_1.1.png)
+![Class Diagram v1.0](https://github.com/nmaia/MundiPagg-BackEnd-Challenge/blob/master/Images/UML/ClassDiagram_1.2.png)
 
 I hope this code can be useful to you, as it is for me. :metal:
 
