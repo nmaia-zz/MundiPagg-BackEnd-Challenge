@@ -15,7 +15,7 @@ In this repository we'll develop a very small system using the following stack:
 
 ### POCO (Plain Old C# Object) - Class Diagram v.1.0
 
-![Class Diagram v1.0](https://github.com/nmaia/MundiPagg-BackEnd-Challenge/blob/master/Images/UML/ClassDiagram_1.png)
+![Class Diagram v1.0](https://github.com/nmaia/MundiPagg-BackEnd-Challenge/blob/master/Images/UML/ClassDiagram_1.1.png)
 
 I hope this code can be useful to you, as it is for me. :metal:
 
