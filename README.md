@@ -11,7 +11,7 @@ In this repository we'll develop a very small system using the following stack:
 * [MongoDB](https://www.mongodb.com/) (a NoSQL Database);
 * [ElasticSearch](https://www.elastic.co/) (a data search engine).
 
-# UML First try
+# UML first try
 
 ![Class Diagram v1.0](https://github.com/nmaia/MundiPagg-BackEnd-Challenge/blob/master/Images/UML/ClassDiagram_1.png)
 
