@@ -22,7 +22,8 @@ namespace Project.Domain.Entities
 
         #region ' Relationships '
 
-        public virtual Localization Localization { get; set; }
+        public virtual Guid LoanId { get; set; }
+        public virtual Loan Loan { get; set; }
 
         #endregion
     }

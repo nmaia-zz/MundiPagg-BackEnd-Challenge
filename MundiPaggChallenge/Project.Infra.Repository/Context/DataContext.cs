@@ -26,7 +26,7 @@ namespace Project.Infra.Repository.Context
 
             modelBuilder.Configurations.Add(new BookConfiguration());
             modelBuilder.Configurations.Add(new ContactConfiguration());
-            modelBuilder.Configurations.Add(new LocalizationConfiguration());
+            modelBuilder.Configurations.Add(new LoanConfiguration());
             modelBuilder.Configurations.Add(new MediaConfiguration());
             modelBuilder.Configurations.Add(new PersonConfiguration());
 
@@ -35,7 +35,7 @@ namespace Project.Infra.Repository.Context
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-        public DbSet<Localization> Localizations { get; set; }
+        public DbSet<Loan> Loans { get; set; }
         public DbSet<Media> Medias { get; set; }
         public DbSet<Person> Persons { get; set; }
     }

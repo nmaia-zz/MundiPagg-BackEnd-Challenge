@@ -3,13 +3,8 @@ using System.Collections.Generic;
 
 namespace Project.Domain.Entities
 {
-    public class Localization
+    public class Loan
     {
-        public Localization()
-        {
-            Persons = new HashSet<Person>();
-        }
-
         #region ' Properties '
 
         public virtual Guid Id { get; set; }
@@ -19,9 +14,10 @@ namespace Project.Domain.Entities
 
         #region ' Relationships '
 
+        public virtual ICollection<Book> Books { get; set; }
+        public virtual ICollection<Media> Medias { get; set; }
         public virtual Guid? PersonId { get; set; }
         public virtual Person Person { get; set; }
-        public virtual ICollection<Person> Persons { get; set; }
 
         #endregion
     }

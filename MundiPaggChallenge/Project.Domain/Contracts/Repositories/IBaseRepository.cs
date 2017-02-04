@@ -12,10 +12,6 @@ namespace Project.Domain.Contracts.Repositories
         IQueryable<TEntity> FindAll();
         TEntity FindById(TKey id);
 
-        IQueryable<TEntity> FindByType(string type);
-        IQueryable<TEntity> FindByAvailability(bool loaned);
-        IQueryable<TEntity> FindByKeyWord(string keyword);
-
         void BeginTransaction();
         void Commit();
         void Rollback();

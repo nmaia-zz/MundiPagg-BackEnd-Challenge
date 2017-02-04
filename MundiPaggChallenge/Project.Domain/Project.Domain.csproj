@@ -42,7 +42,10 @@
   <ItemGroup>
     <Compile Include="Contracts\Repositories\IBaseRepository.cs" />
     <Compile Include="Contracts\Repositories\IBookRepository.cs" />
+    <Compile Include="Contracts\Repositories\IContactRepository.cs" />
+    <Compile Include="Contracts\Repositories\ILoanRepository.cs" />
     <Compile Include="Contracts\Repositories\IMediaRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPersonRepository.cs" />
     <Compile Include="Entities\Book.cs" />
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\Media.cs" />
@@ -50,7 +53,7 @@
     <Compile Include="Entities\Types\Genre.cs" />
     <Compile Include="Entities\Types\Gender.cs" />
     <Compile Include="Entities\Item.cs" />
-    <Compile Include="Entities\Localization.cs" />
+    <Compile Include="Entities\Loan.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\Types\ItemType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

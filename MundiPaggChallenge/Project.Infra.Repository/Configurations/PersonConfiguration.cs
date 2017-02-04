@@ -37,7 +37,9 @@ namespace Project.Infra.Repository.Configurations
 
             #region ' Relationships '
 
-            HasRequired(p => p.Contact);
+            HasRequired(p => p.Contact)
+                .WithRequiredDependent()
+                .Map(p => p.MapKey("ContactId"));
 
             #endregion
         }

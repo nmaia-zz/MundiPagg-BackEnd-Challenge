@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Project.Infra.Repository.Configurations
 {
-    public class LocalizationConfiguration : EntityTypeConfiguration<Localization>
+    public class LoanConfiguration : EntityTypeConfiguration<Loan>
     {
-        public LocalizationConfiguration()
+        public LoanConfiguration()
         {
             #region ' PK '
 
@@ -27,9 +27,8 @@ namespace Project.Infra.Repository.Configurations
             #region ' Relationships '
 
             HasOptional(l => l.Person)
-                .WithMany(p => p.Localizations)
-                .HasForeignKey(l => l.PersonId)
-                .WillCascadeOnDelete(false);
+                .WithMany(p => p.Loans)
+                .HasForeignKey(l => l.PersonId);
 
             #endregion
         }

@@ -49,11 +49,16 @@ namespace Project.Infra.Repository.Configurations
             Property(b => b.Genre)
                 .IsRequired();
 
+            Property(b => b.LoanId)
+                .IsRequired();
+
             #endregion
 
             #region ' Relationships '
 
-            HasRequired(b => b.Localization);
+            HasRequired(b => b.Loan)
+                .WithMany(l => l.Books)
+                .HasForeignKey(b => b.LoanId);
 
             #endregion
         }

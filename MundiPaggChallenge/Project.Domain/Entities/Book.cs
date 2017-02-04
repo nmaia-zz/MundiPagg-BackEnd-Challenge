@@ -1,4 +1,5 @@
 ﻿using Project.Domain.Entities.Types;
+using System;
 
 namespace Project.Domain.Entities
 {

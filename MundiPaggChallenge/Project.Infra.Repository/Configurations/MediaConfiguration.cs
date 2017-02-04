@@ -38,11 +38,16 @@ namespace Project.Infra.Repository.Configurations
             Property(m => m.MediaType)
                 .IsRequired();
 
+            Property(m => m.LoanId)
+                .IsRequired();
+
             #endregion
 
             #region ' Relationships '
 
-            HasRequired(m => m.Localization);
+            HasRequired(m => m.Loan)
+                .WithMany(l => l.Medias)
+                .HasForeignKey(m => m.LoanId);
 
             #endregion
         }
