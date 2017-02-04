@@ -8,8 +8,12 @@ In this repository we'll develop a very small system using the following stack:
 * [C# .Net](https://msdn.microsoft.com/en-us/library/kx37x362.aspx) (as the back-end language);
 * [Web API](https://msdn.microsoft.com/en-us/library/hh833994(v=vs.108).aspx) (using the Restful concept);
 * [Angular](https://angularjs.org/) (a JavaScript framework for the front-end);
-* ~~[MongoDB](https://www.mongodb.com/) (a NoSQL Database)~~;
+* [Entity Framework](https://msdn.microsoft.com/en-us/library/gg696172(v=vs.103).aspx) (ORM - Object-Relational Mapping)
 * [ElasticSearch](https://www.elastic.co/) (a data search engine).
+
+# Development Approach
+
+In this project we chose to use [DDD (Domain Driven Design)](https://en.wikipedia.org/wiki/Domain-driven_design).
 
 # UML
 
