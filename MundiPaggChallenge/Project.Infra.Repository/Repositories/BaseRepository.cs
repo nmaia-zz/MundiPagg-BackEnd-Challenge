@@ -18,30 +18,30 @@ namespace Project.Infra.Repository.Repositories
             context = new DataContext();
         }
 
-        public virtual void Insert(TEntity obj)
+        public void Insert(TEntity obj)
         {
             context.Entry(obj).State = EntityState.Added;
             context.SaveChanges();
         }
 
-        public virtual void Update(TEntity obj)
+        public void Update(TEntity obj)
         {
             context.Entry(obj).State = EntityState.Modified;
             context.SaveChanges();
         }
 
-        public virtual void Delete(TEntity obj)
+        public void Delete(TEntity obj)
         {
             context.Entry(obj).State = EntityState.Deleted;
             context.SaveChanges();
         }
 
-        public virtual IQueryable<TEntity> FindAll()
+        public IQueryable<TEntity> FindAll()
         {
             return context.Set<TEntity>().AsQueryable();
         }
 
-        public virtual TEntity FindById(TKey id)
+        public TEntity FindById(TKey id)
         {
             return context.Set<TEntity>().Find(id);
         }

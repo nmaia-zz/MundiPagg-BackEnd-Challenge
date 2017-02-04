@@ -1,5 +1,6 @@
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.UnitTests\bin\Debug\Project.UnitTests.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.UnitTests\bin\Debug\Project.UnitTests.pdb
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.UnitTests\obj\Debug\Project.UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.UnitTests\obj\Debug\Project.UnitTests.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.UnitTests\obj\Debug\Project.UnitTests.pdb
