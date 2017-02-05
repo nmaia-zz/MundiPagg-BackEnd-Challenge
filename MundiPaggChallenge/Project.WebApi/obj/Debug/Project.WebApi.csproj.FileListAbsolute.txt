@@ -40,5 +40,6 @@ C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggC
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Net.Http.Formatting.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Web.Http.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Web.Http.WebHost.xml
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\obj\Debug\Project.WebApi.csprojResolveAssemblyReference.cache
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\obj\Debug\Project.WebApi.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\obj\Debug\Project.WebApi.pdb
