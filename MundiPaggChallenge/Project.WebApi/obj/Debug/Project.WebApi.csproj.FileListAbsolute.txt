@@ -14,6 +14,7 @@ C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggC
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Project.WebApi.dll.config
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Project.WebApi.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Project.WebApi.pdb
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\AutoMapper.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\EntityFramework.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\EntityFramework.SqlServer.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Microsoft.AI.Agent.Intercept.dll
@@ -26,6 +27,12 @@ C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggC
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Newtonsoft.Json.dll
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Ninject.dll
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Ninject.Web.Common.dll
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Ninject.Web.WebApi.dll
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Project.Application.dll
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Project.Domain.dll
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Project.Infra.Repository.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Net.Http.Formatting.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Web.Helpers.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Web.Http.dll
@@ -35,6 +42,11 @@ C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggC
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Web.WebPages.Deployment.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Web.WebPages.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Web.WebPages.Razor.dll
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\WebActivatorEx.dll
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Project.Application.pdb
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Project.Domain.pdb
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Project.Infra.Repository.pdb
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\AutoMapper.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\EntityFramework.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\EntityFramework.SqlServer.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Microsoft.AI.DependencyCollector.xml
@@ -43,6 +55,9 @@ C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggC
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Microsoft.ApplicationInsights.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Ninject.xml
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Ninject.Web.Common.xml
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\Ninject.Web.WebApi.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Web.Helpers.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Web.Mvc.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.WebApi\bin\System.Web.Razor.xml

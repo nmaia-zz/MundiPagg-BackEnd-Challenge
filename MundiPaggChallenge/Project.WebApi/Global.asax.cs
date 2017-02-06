@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using Project.WebApi.Mappings;
+using System.Web.Http;
 using System.Web.Mvc;
 
 namespace Project.WebApi
@@ -10,6 +11,8 @@ namespace Project.WebApi
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
             AreaRegistration.RegisterAllAreas();
+
+            AutoMapperConfig.Register();
         }
     }
 }

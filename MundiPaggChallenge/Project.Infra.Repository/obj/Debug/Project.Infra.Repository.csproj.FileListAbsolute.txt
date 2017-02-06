@@ -8,5 +8,7 @@ C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggC
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\bin\Debug\EntityFramework.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\obj\Debug\Project.Infra.Repository.csprojResolveAssemblyReference.cache
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\obj\Debug\Project.Infra.Repository.Migrations.Initial.resources
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\obj\Debug\Project.Infra.Repository.csproj.GenerateResource.Cache
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\obj\Debug\Project.Infra.Repository.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Infra.Repository\obj\Debug\Project.Infra.Repository.pdb

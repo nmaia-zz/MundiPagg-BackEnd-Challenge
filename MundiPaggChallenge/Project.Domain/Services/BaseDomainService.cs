@@ -41,9 +41,9 @@ namespace Project.Domain.Services
             return repository.FindAll();
         }
 
-        public TEntity FindById(TKey id)
+        public TEntity FindById(TKey key)
         {
-            return repository.FindById(id);
+            return repository.FindById(key);
         }
 
         public void Dispose()

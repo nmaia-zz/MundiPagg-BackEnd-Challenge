@@ -40,11 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IBaseApplicationService.cs" />
+    <Compile Include="Contracts\IBookApplicationService.cs" />
+    <Compile Include="Contracts\IContactApplicationService.cs" />
+    <Compile Include="Contracts\ILoanApplicationService.cs" />
+    <Compile Include="Contracts\IMediaApplicationService.cs" />
+    <Compile Include="Contracts\IPersonApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BaseApplicationService.cs" />
+    <Compile Include="Services\BookApplicationService.cs" />
+    <Compile Include="Services\ContactApplicationService.cs" />
+    <Compile Include="Services\LoanApplicationService.cs" />
+    <Compile Include="Services\MediaApplicationService.cs" />
+    <Compile Include="Services\PersonApplicationService.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Contracts\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\Project.Domain\Project.Domain.csproj">
+      <Project>{76523fa7-4e33-44b8-b053-14032cfd082f}</Project>
+      <Name>Project.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

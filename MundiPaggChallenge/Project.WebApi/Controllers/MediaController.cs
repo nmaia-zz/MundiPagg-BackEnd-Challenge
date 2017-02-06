@@ -1,4 +1,7 @@
-﻿using Project.WebApi.Models;
+﻿using AutoMapper;
+using Project.Application.Contracts;
+using Project.Domain.Entities;
+using Project.WebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -10,6 +13,13 @@ namespace Project.WebApi.Controllers
     [RoutePrefix("api/media")]
     public class MediaController : ApiController
     {
+        private readonly IMediaApplicationService appMedia;
+
+        public MediaController(IMediaApplicationService appMedia)
+        {
+            this.appMedia = appMedia;
+        }
+
         [HttpPost]
         [Route("register")] //url: /api/media/register
         public HttpResponseMessage Post(MediaModelRegister model)
@@ -18,6 +28,9 @@ namespace Project.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    Media m = Mapper.Map<MediaModelRegister, Media>(model);
+                    appMedia.Insert(m);
+
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }
                 else
@@ -39,6 +52,9 @@ namespace Project.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    Media m = Mapper.Map<MediaModelEdition, Media>(model);
+                    appMedia.Update(m);
+
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }
                 else
@@ -53,12 +69,23 @@ namespace Project.WebApi.Controllers
         }
 
         [HttpDelete]
-        [Route("delete")] //url: /api/media/delete?id={0}
+        [Route("delete/{id}")] //url: /api/media/delete/id
         public HttpResponseMessage Delete(Guid id)
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK);
+                Media m = appMedia.FindById(id);
+
+                if(m != null)
+                {
+                    appMedia.Delete(m);
+
+                    return Request.CreateResponse(HttpStatusCode.OK);
+                }
+                else
+                {
+                    throw new Exception("Media not found.");
+                }
             }
             catch (Exception ex)
             {
@@ -74,6 +101,11 @@ namespace Project.WebApi.Controllers
             {
                 var mediasList = new List<MediaModelConsultation>();
 
+                foreach (Media m in appMedia.FindAll())
+                {
+                    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
+                }
+
                 return Request.CreateResponse(HttpStatusCode.OK, mediasList);
             }
             catch (Exception ex)
@@ -83,14 +115,23 @@ namespace Project.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("get")] //url: /api/media/get?id={0}
-        public HttpResponseMessage GetValue()
+        [Route("get/{id}")] //url: /api/media/get/id
+        public HttpResponseMessage GetValue(Guid id)
         {
             try
             {
-                var model = new MediaModelConsultation();
+                Media m = appMedia.FindById(id);
 
-                return Request.CreateResponse(HttpStatusCode.OK, model);
+                if (m != null)
+                {
+                    var model = Mapper.Map<Media, MediaModelConsultation>(m);
+
+                    return Request.CreateResponse(HttpStatusCode.OK, model);
+                }
+                else
+                {
+                    throw new Exception("Media not found.");
+                }
             }
             catch (Exception ex)
             {
@@ -111,6 +152,12 @@ namespace Project.WebApi.Controllers
             }
 
             return errorsList;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            appMedia.Dispose();
         }
     }
 }

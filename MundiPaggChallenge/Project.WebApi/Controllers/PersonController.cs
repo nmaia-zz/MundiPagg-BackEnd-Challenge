@@ -1,4 +1,7 @@
-﻿using Project.WebApi.Models;
+﻿using AutoMapper;
+using Project.Application.Contracts;
+using Project.Domain.Entities;
+using Project.WebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -10,6 +13,13 @@ namespace Project.WebApi.Controllers
     [RoutePrefix("api/person")]
     public class PersonController : ApiController
     {
+        private readonly IPersonApplicationService appPerson;
+
+        public PersonController(IPersonApplicationService appPerson)
+        {
+            this.appPerson = appPerson;
+        } 
+
         [HttpPost]
         [Route("register")] //url: /api/person/register
         public HttpResponseMessage Post(PersonModelRegister model)
@@ -18,6 +28,9 @@ namespace Project.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    Person p = Mapper.Map<PersonModelRegister, Person>(model);
+                    appPerson.Insert(p);
+
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }
                 else
@@ -39,6 +52,9 @@ namespace Project.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    Person p = Mapper.Map<PersonModelEdition, Person>(model);
+                    appPerson.Update(p);
+
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }
                 else
@@ -53,12 +69,23 @@ namespace Project.WebApi.Controllers
         }
 
         [HttpDelete]
-        [Route("delete")] //url: /api/person/delete?id={0}
+        [Route("delete/{id}")] //url: /api/person/delete/id
         public HttpResponseMessage Delete(Guid id)
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK);
+                Person p = appPerson.FindById(id);
+
+                if (p != null)
+                {
+                    appPerson.Delete(p);
+
+                    return Request.CreateResponse(HttpStatusCode.OK);
+                }
+                else
+                {
+                    throw new Exception("Person not found.");
+                }
             }
             catch (Exception ex)
             {
@@ -74,6 +101,11 @@ namespace Project.WebApi.Controllers
             {
                 var personsList = new List<PersonModelConsultation>();
 
+                foreach (Person p in appPerson.FindAll())
+                {
+                    personsList.Add(Mapper.Map<Person, PersonModelConsultation>(p));
+                }
+
                 return Request.CreateResponse(HttpStatusCode.OK, personsList);
             }
             catch (Exception ex)
@@ -83,14 +115,23 @@ namespace Project.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("get")] //url: /api/person/get?id={0}
-        public HttpResponseMessage GetValue()
+        [Route("get/{id}")] //url: /api/person/get/id
+        public HttpResponseMessage GetValue(Guid id)
         {
             try
             {
-                var model = new PersonModelConsultation();
+                Person p = appPerson.FindById(id);
 
-                return Request.CreateResponse(HttpStatusCode.OK, model);
+                if (p != null)
+                {
+                    var model = Mapper.Map<Person, PersonModelConsultation>(p);
+
+                    return Request.CreateResponse(HttpStatusCode.OK, model);
+                }
+                else
+                {
+                    throw new Exception("Person not found.");
+                }
             }
             catch (Exception ex)
             {
@@ -111,6 +152,12 @@ namespace Project.WebApi.Controllers
             }
 
             return errorsList;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            appPerson.Dispose();
         }
     }
 }

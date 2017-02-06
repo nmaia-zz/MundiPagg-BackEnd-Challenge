@@ -41,9 +41,9 @@ namespace Project.Infra.Repository.Repositories
             return context.Set<TEntity>().AsQueryable();
         }
 
-        public TEntity FindById(TKey id)
+        public TEntity FindById(TKey key)
         {
-            return context.Set<TEntity>().Find(id);
+            return context.Set<TEntity>().Find(key);
         }
 
         public void BeginTransaction()

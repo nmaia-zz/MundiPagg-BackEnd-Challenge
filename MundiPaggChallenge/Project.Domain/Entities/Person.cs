@@ -24,7 +24,6 @@ namespace Project.Domain.Entities
         #region ' Relationships '
 
         public virtual ICollection<Loan> Loans { get; set; }
-
         public virtual Contact Contact { get; set; }
 
         #endregion

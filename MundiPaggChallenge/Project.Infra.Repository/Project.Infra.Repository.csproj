@@ -56,6 +56,10 @@
     <Compile Include="Configurations\MediaConfiguration.cs" />
     <Compile Include="Configurations\PersonConfiguration.cs" />
     <Compile Include="Context\DataContext.cs" />
+    <Compile Include="Migrations\201702060216230_Initial.cs" />
+    <Compile Include="Migrations\201702060216230_Initial.Designer.cs">
+      <DependentUpon>201702060216230_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
@@ -65,7 +69,6 @@
     <Compile Include="Repositories\MediaRepository.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -75,6 +78,11 @@
       <Project>{76523fa7-4e33-44b8-b053-14032cfd082f}</Project>
       <Name>Project.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702060216230_Initial.resx">
+      <DependentUpon>201702060216230_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

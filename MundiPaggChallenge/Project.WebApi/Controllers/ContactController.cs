@@ -1,4 +1,7 @@
-﻿using Project.WebApi.Models;
+﻿using AutoMapper;
+using Project.Application.Contracts;
+using Project.Domain.Entities;
+using Project.WebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -10,6 +13,13 @@ namespace Project.WebApi.Controllers
     [RoutePrefix("api/contact")]
     public class ContactController : ApiController
     {
+        private readonly IContactApplicationService appContact;
+
+        public ContactController(IContactApplicationService appContact)
+        {
+            this.appContact = appContact;
+        }
+
         [HttpPost]
         [Route("register")] //url: /api/contact/register
         public HttpResponseMessage Post(ContactModelRegister model)
@@ -18,6 +28,10 @@ namespace Project.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    Contact c = Mapper.Map<ContactModelRegister, Contact>(model);
+
+                    appContact.Insert(c);
+
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }
                 else
@@ -39,6 +53,10 @@ namespace Project.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    Contact c = Mapper.Map<ContactModelEdition, Contact>(model);
+
+                    appContact.Update(c);
+
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }
                 else
@@ -53,12 +71,23 @@ namespace Project.WebApi.Controllers
         }
 
         [HttpDelete]
-        [Route("delete")] //url: /api/contact/delete?id={0}
+        [Route("delete/{id}")] //url: /api/contact/delete/id
         public HttpResponseMessage Delete(Guid id)
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK);
+                Contact c = appContact.FindById(id);
+
+                if (c != null)
+                {
+                    appContact.Delete(c);
+
+                    return Request.CreateResponse(HttpStatusCode.OK);
+                }
+                else
+                {
+                    throw new Exception("Contact not found.");
+                }
             }
             catch (Exception ex)
             {
@@ -74,6 +103,11 @@ namespace Project.WebApi.Controllers
             {
                 var contactsList = new List<ContactModelConsultation>();
 
+                foreach (Contact c in appContact.FindAll())
+                {
+                    contactsList.Add(Mapper.Map<Contact, ContactModelConsultation>(c));
+                }
+
                 return Request.CreateResponse(HttpStatusCode.OK, contactsList);
             }
             catch (Exception ex)
@@ -83,14 +117,23 @@ namespace Project.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("get")] //url: /api/contact/get?id={0}
-        public HttpResponseMessage GetValue()
+        [Route("get/{id}")] //url: /api/contact/get/id
+        public HttpResponseMessage GetValue(Guid id)
         {
             try
             {
-                var model = new ContactModelConsultation();
+                Contact c = appContact.FindById(id);
 
-                return Request.CreateResponse(HttpStatusCode.OK, model);
+                if (c != null)
+                {
+                    var model = Mapper.Map<Contact, ContactModelConsultation>(c);
+
+                    return Request.CreateResponse(HttpStatusCode.OK, model);
+                }
+                else
+                {
+                    throw new Exception("Contact not found.");
+                }
             }
             catch (Exception ex)
             {
@@ -111,6 +154,12 @@ namespace Project.WebApi.Controllers
             }
 
             return errorsList;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            appContact.Dispose();
         }
     }
 }

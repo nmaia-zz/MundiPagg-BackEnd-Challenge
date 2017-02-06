@@ -10,7 +10,7 @@ namespace Project.Domain.Contracts.Repositories
         void Update(TEntity obj);
         void Delete(TEntity obj);
         IQueryable<TEntity> FindAll();
-        TEntity FindById(TKey id);
+        TEntity FindById(TKey key);
 
         void BeginTransaction();
         void Commit();
