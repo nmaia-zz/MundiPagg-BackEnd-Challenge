@@ -1,0 +1,93 @@
+﻿<div class="page-header">
+    <h1>Items <small>list</small></h1>
+</div>
+
+<div>
+    <label>{{message}}</label>
+</div>
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><span class="glyphicon glyphicon-th"></span><strong> Registers</strong></div>
+    <!--Table-->
+    <table class="table table-hover" ng-init="list()">
+        <thead>
+            <tr>
+                <th><a href="" ng-click="orderByField='Title'; reverseSort = !reverseSort">
+                        Title
+                        <span ng-show="orderByField == 'Title'">
+                            <span ng-show="!reverseSort"><span class="dropup"><span class="caret"></span></span></span>
+                            <span ng-show="reverseSort"><span class="caret"></span></span>
+                        </span>
+                    </a>
+                </th>
+                <th>
+                    <a href="" ng-click="orderByField='RegisterDate'; reverseSort = !reverseSort">
+                        Register Date
+                        <span ng-show="orderByField == 'RegisterDate'">
+                            <span ng-show="!reverseSort"><span class="dropup"><span class="caret"></span></span></span>
+                            <span ng-show="reverseSort"><span class="caret"></span></span>
+                        </span>
+                    </a>
+                </th>
+                <th>
+                    <a href="" ng-click="orderByField='ReleaseDate'; reverseSort = !reverseSort">
+                        Release Date
+                        <span ng-show="orderByField == 'ReleaseDate'">
+                            <span ng-show="!reverseSort"><span class="dropup"><span class="caret"></span></span></span>
+                            <span ng-show="reverseSort"><span class="caret"></span></span>
+                        </span>
+                    </a>
+                </th>
+                <th>
+                    <a href="" ng-click="orderByField='ItemType'; reverseSort = !reverseSort">
+                        Item Type
+                        <span ng-show="orderByField == 'ItemType'">
+                            <span ng-show="!reverseSort"><span class="dropup"><span class="caret"></span></span></span>
+                            <span ng-show="reverseSort"><span class="caret"></span></span>
+                        </span>
+                    </a>
+                </th>
+                <th>
+                    <a href="" ng-click="orderByField='Genre'; reverseSort = !reverseSort">
+                        Genre
+                        <span ng-show="orderByField == 'Genre'">
+                            <span ng-show="!reverseSort"><span class="dropup"><span class="caret"></span></span></span>
+                            <span ng-show="reverseSort"><span class="caret"></span></span>
+                        </span>
+                    </a>
+                </th>
+                <th>
+                    <a href="" ng-click="orderByField='Loaned'; reverseSort = !reverseSort">
+                        Loaned
+                        <span ng-show="orderByField == 'Loaned'">
+                            <span ng-show="!reverseSort"><span class="dropup"><span class="caret"></span></span></span>
+                            <span ng-show="reverseSort"><span class="caret"></span></span>
+                        </span>
+                    </a>
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="i in items | orderBy:orderByField:reverseSort">
+                <td>{{ i.Title }}</td>
+                <td>{{ i.RegisterDate | date:"MM/dd/yyyy" }}</td>
+                <td>{{ i.ReleaseDate | date:"MM/dd/yyyy" }}</td>
+                <td>{{ i.ItemType }}</td>
+                <td>{{ i.Genre }}</td>
+                <td>{{ i.Loaned ? "Yes" : "No" }}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        Edit
+                    </button>
+                    <button class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

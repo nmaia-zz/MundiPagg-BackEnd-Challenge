@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.Domain.Entities;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Project.WebApi.Models
@@ -81,5 +82,7 @@ namespace Project.WebApi.Models
         public int Pages { get; set; }
         public string PublishingCompany { get; set; }
         public string Genre { get; set; }
+        public Guid LoanId { get; set; }
+        public bool Loaned { get; set; }
     }
 }

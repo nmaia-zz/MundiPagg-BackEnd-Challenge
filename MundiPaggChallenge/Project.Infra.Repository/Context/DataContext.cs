@@ -13,6 +13,7 @@ namespace Project.Infra.Repository.Context
         public DataContext() : base (ConfigurationManager.ConnectionStrings["devConnString"].ConnectionString)
         {
             //Database.SetInitializer(new DataContextInitializer());
+            Configuration.ProxyCreationEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
