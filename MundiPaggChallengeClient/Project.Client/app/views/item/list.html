@@ -2,6 +2,41 @@
     <h1>Items <small>list</small></h1>
 </div>
 
+<div class="btn-group" role="group" aria-label="..." ng-init="toggle1 = false; toggle2 = false; toggle3 = false">
+
+    <label>Filter by:</label><br />
+
+    <!--Item Filter-->
+    <button type="button" class="btn btn-default" ng-show="!toggle1" ng-click="toggle1 = true; toggle2 = false; toggle3 = false;">Item Type</button>
+    <button type="button" class="btn btn-default" ng-show="toggle1" ng-click="toggle1 = false; toggle2 = false; toggle3 = false;">Item Type</button>
+
+    <!--Availability Filter-->
+    <button type="button" class="btn btn-default" ng-show="!toggle2" ng-click="toggle1 = false; toggle2 = true; toggle3 = false;">Availability</button>
+    <button type="button" class="btn btn-default" ng-show="toggle2" ng-click="toggle1 = false; toggle2 = false; toggle3 = false;">Availability</button>
+
+    <!--Media Filter-->
+    <button type="button" class="btn btn-default" ng-show="!toggle3" ng-click="toggle1 = false; toggle2 = false; toggle3 = true;">Media Type</button>
+    <button type="button" class="btn btn-default" ng-show="toggle3" ng-click="toggle1 = false; toggle2 = false; toggle3 = false;">Media Type</button>
+
+    <!--Return All Data-->
+    <button type="button" class="btn btn-default" ng-click="list()" style="border-radius: 0;">Return All</button>
+
+    <div ng-if="toggle1">
+        <input type="radio" name="itemType" value="Book" checked id="book" ng-model="value" ng-change="filterByItemType(value)"><label for="book"> Book</label><br>
+        <input type="radio" name="itemType" value="Media" id="media" ng-model="value" ng-change="filterByItemType(value)"><label for="media"> Media</label><br>
+    </div>
+
+    <div ng-if="toggle2">
+        <input type="radio" name="availability" value="false" checked id="available" ng-model="value" ng-change="filterByAvailability(value)"><label for="available"> Available</label><br>
+        <input type="radio" name="availability" value="true" id="loaned" ng-model="value" ng-change="filterByAvailability(value)"><label for="loaned"> Loaned</label><br>
+    </div>
+
+    <div ng-if="toggle3">
+        <input type="radio" name="mediaType" value="cd" checked id="cd" ng-model="value" ng-change="filterByMediaType(value)"><label for="cd"> CD</label><br>
+        <input type="radio" name="mediaType" value="dvd" id="dvd" ng-model="value" ng-change="filterByMediaType(value)"><label for="dvd"> DVD</label><br>
+    </div>
+</div>
+
 <div>
     <label>{{message}}</label>
 </div>
@@ -13,7 +48,8 @@
     <table class="table table-hover" ng-init="list()">
         <thead>
             <tr>
-                <th><a href="" ng-click="orderByField='Title'; reverseSort = !reverseSort">
+                <th>
+                    <a href="" ng-click="orderByField='Title'; reverseSort = !reverseSort">
                         Title
                         <span ng-show="orderByField == 'Title'">
                             <span ng-show="!reverseSort"><span class="dropup"><span class="caret"></span></span></span>
@@ -70,13 +106,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="i in items | orderBy:orderByField:reverseSort">
+            <tr ng-repeat="i in items | filter: $parent.search | orderBy:orderByField:reverseSort">
                 <td>{{ i.Title }}</td>
-                <td>{{ i.RegisterDate | date:"MM/dd/yyyy" }}</td>
-                <td>{{ i.ReleaseDate | date:"MM/dd/yyyy" }}</td>
+                <td>{{ i.RegisterDate | date:"yyyy-MM-dd" }}</td>
+                <td>{{ i.ReleaseDate | date:"yyyy-MM-dd" }}</td>
                 <td>{{ i.ItemType }}</td>
                 <td>{{ i.Genre }}</td>
-                <td>{{ i.Loaned ? "Yes" : "No" }}</td>
+                <td>{{ i.Loaned }}</td>
                 <td>
                     <button class="btn btn-primary btn-sm">
                         <span class="glyphicon glyphicon-pencil"></span>

@@ -26,6 +26,12 @@
     <script src="app/controllers/item-controller.js"></script>
     <script src="app/controllers/person-controller.js"></script>
 
+    <script>
+        $(function () {
+            $("#txtSearch").focus();
+        });
+    </script>
+
     <!--My Styles-->
     <link rel="stylesheet" type="text/css" href="Styles/Patterns/BodyBackgroundPattern.css"  />
 </head>
@@ -57,12 +63,13 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="navbar-form navbar-right">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                    <!--<form class="navbar-form navbar-right">-->
+                        <div class="navbar-form navbar-right">
+                            <div class="form-group">
+                                <input type="text" id="txtSearch" class="form-control" placeholder="Search" ng-model="search">
+                            </div>
                         </div>
-                        <!--<button type="submit" class="btn btn-primary">Go!</button>-->
-                    </form>
+                    <!--</form>-->
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
@@ -70,7 +77,7 @@
     <main class="container">
         <div class="well well-sm">
             <h2>Items Controll App</h2>
-            A very small system built with AngularJS 1.5 and Asp.Net Web.Api
+            A very small system built with AngularJS 1.5 and Asp.Net Web.Api 2
         </div>
         <div ng-view>
             <!--Content area of the SPA Applicaiton-->

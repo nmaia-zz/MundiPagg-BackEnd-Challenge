@@ -9,5 +9,22 @@
                 return $http.get(urlBase + "/list");
             };
 
+            itemFactory.filterByItemType = function (type) {
+                return $http.get(urlBase + "/filterByItemType/" + type);
+            }
+
+            //resolved using angularjs $filter
+            //itemFactory.filterByKeyWord = function (keyword) {
+            //    return $http.get(urlBase + "/filterByKeyWord/" + keyword);
+            //}
+
+            itemFactory.filterByAvailability = function (loaned) {
+                return $http.get(urlBase + "/filterByAvailability/" + loaned);
+            }
+
+            itemFactory.filterByMediaType = function (type) {
+                return $http.get(urlBase + "/filterByMediaType/" + type);
+            }
+
             return itemFactory;
         }]);
