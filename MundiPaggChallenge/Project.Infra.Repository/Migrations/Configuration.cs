@@ -14,33 +14,15 @@ namespace Project.Infra.Repository.Migrations
 
         protected override void Seed(Project.Infra.Repository.Context.DataContext context)
         {
-            #region ' --- Contacts --- '
-
-            var contact_1 = context.Contacts.Add(new Contact { Id = Guid.Parse("1a840459-fe76-41e0-a6d4-ceebd74fee04"), Cellphone = "021999911517", Email = "mozoculero@apkmd.com" });
-            var contact_2 = context.Contacts.Add(new Contact { Id = Guid.Parse("adb9945a-df10-43ef-ab6d-e02aa761526c"), Cellphone = "021999910224", Email = "zacis@vps.com" });
-            var contact_3 = context.Contacts.Add(new Contact { Id = Guid.Parse("00835358-3076-44d0-94c3-dbf692a2c128"), Cellphone = "021999781517", Email = "lixuti@nutpa.com" });
-            var contact_4 = context.Contacts.Add(new Contact { Id = Guid.Parse("2e4270e3-b315-42b0-b061-79c94f7a3a7b"), Cellphone = "021999367474", Email = "yowazuh@gousa.com" });
-            var contact_5 = context.Contacts.Add(new Contact { Id = Guid.Parse("ec88666c-c0ca-4ccd-94ae-e443f7d6d6d3"), Cellphone = "021999982190", Email = "neriyab@nutpa.com" });
-            var contact_6 = context.Contacts.Add(new Contact { Id = Guid.Parse("2a16d908-5ebb-43b6-b116-7f5f499d7789"), Cellphone = "021999987372", Email = "jususivusi@vps.com" });
-            var contact_7 = context.Contacts.Add(new Contact { Id = Guid.Parse("d96e9950-f101-4d1c-8ceb-8f07c7f387d1"), Cellphone = "021999913608", Email = "sojicur@car.com" });
-            //var contact_8 = context.Contacts.Add(new Contact { Id = Guid.Parse("961a7942-5440-438f-b62c-5fb68537381b"), Cellphone = "021999366838", Email = "cetemal@loang.com" });
-            //var contact_9 = context.Contacts.Add(new Contact { Id = Guid.Parse("29549876-7ff2-4b19-a143-9d685848f1b2"), Cellphone = "021999787474", Email = "wilo@nutpa.com" });
-            //var contact_10 = context.Contacts.Add(new Contact { Id = Guid.Parse("f50647bf-a971-407e-8b57-b70f10bba463"), Cellphone = "021999985345", Email = "codazax@vps.com" });
-
-            #endregion
-
             #region ' --- Persons --- '
 
-            var person_1 = context.Persons.Add(new Person { Id = Guid.Parse("594449c4-ba67-4f59-96ca-797aec2f8f51"), FirstName = "Raissa", LastName = "Melo", Gender = Gender.F, BirthDate = Convert.ToDateTime("1997-12-27"), Contact = contact_1 });
-            var person_2 = context.Persons.Add(new Person { Id = Guid.Parse("60ea65e5-d29e-46dc-801a-dad35d39df9e"), FirstName = "Júlia", LastName = "Castro", Gender = Gender.F, BirthDate = Convert.ToDateTime("1985-04-01"), Contact = contact_2 });
-            var person_3 = context.Persons.Add(new Person { Id = Guid.Parse("5f397ccd-c2aa-4a5a-91f5-d486bfae678b"), FirstName = "Marisa", LastName = "Ferreira", Gender = Gender.F, BirthDate = Convert.ToDateTime("1983-08-01"), Contact = contact_3 });
-            var person_4 = context.Persons.Add(new Person { Id = Guid.Parse("16a2e806-7d15-43b1-8b7d-8134a92f4faf"), FirstName = "Bruna", LastName = "Sousa", Gender = Gender.F, BirthDate = Convert.ToDateTime("1982-07-27"), Contact = contact_4 });
-            var person_5 = context.Persons.Add(new Person { Id = Guid.Parse("90a3bf00-d693-41f1-8269-5208394a9b9d"), FirstName = "Alice", LastName = "Dias", Gender = Gender.F, BirthDate = Convert.ToDateTime("1988-07-23"), Contact = contact_5 });
-            var person_6 = context.Persons.Add(new Person { Id = Guid.Parse("c61e1f8f-89a0-41c2-ad40-d90e39413b1f"), FirstName = "Tomás", LastName = "Araujo", Gender = Gender.M, BirthDate = Convert.ToDateTime("1992-03-19"), Contact = contact_6 });
-            var person_7 = context.Persons.Add(new Person { Id = Guid.Parse("72781650-eb64-46ea-a92d-6432b1ca48b9"), FirstName = "Kauan", LastName = "Pereira", Gender = Gender.M, BirthDate = Convert.ToDateTime("1983-04-26"), Contact = contact_7 });
-            //var person_8 = context.Persons.Add(new Person { Id = Guid.Parse("4455d293-3879-4965-8a85-6b925101f61a"), FirstName = "Rodrigo", LastName = "Ferreira", Gender = Gender.M, BirthDate = Convert.ToDateTime("1984-03-15"), Contact = contact_8 });
-            //var person_9 = context.Persons.Add(new Person { Id = Guid.Parse("d180e534-b092-409a-ab19-8ea456e47fb8"), FirstName = "Igor", LastName = "Fernandes", Gender = Gender.M, BirthDate = Convert.ToDateTime("1991-11-11"), Contact = contact_9 });
-            //var person_10 = context.Persons.Add(new Person { Id = Guid.Parse("8a6e2c43-cf0b-4529-8f31-f171a2bdfacf"), FirstName = "Otávio", LastName = "Rodrigues", Gender = Gender.M, BirthDate = Convert.ToDateTime("1987-06-23"), Contact = contact_10 });
+            var person_1 = context.Persons.Add(new Person { Id = Guid.Parse("594449c4-ba67-4f59-96ca-797aec2f8f51"), FirstName = "Raissa", LastName = "Melo", Gender = Gender.F, BirthDate = Convert.ToDateTime("1997-12-27"), Cellphone = "021999911517", Email = "mozoculero@apkmd.com" });
+            var person_2 = context.Persons.Add(new Person { Id = Guid.Parse("60ea65e5-d29e-46dc-801a-dad35d39df9e"), FirstName = "Júlia", LastName = "Castro", Gender = Gender.F, BirthDate = Convert.ToDateTime("1985-04-01"), Cellphone = "021999910224", Email = "zacis@vps.com" });
+            var person_3 = context.Persons.Add(new Person { Id = Guid.Parse("5f397ccd-c2aa-4a5a-91f5-d486bfae678b"), FirstName = "Marisa", LastName = "Ferreira", Gender = Gender.F, BirthDate = Convert.ToDateTime("1983-08-01"), Cellphone = "021999781517", Email = "lixuti@nutpa.com" });
+            var person_4 = context.Persons.Add(new Person { Id = Guid.Parse("16a2e806-7d15-43b1-8b7d-8134a92f4faf"), FirstName = "Bruna", LastName = "Sousa", Gender = Gender.F, BirthDate = Convert.ToDateTime("1982-07-27"), Cellphone = "021999367474", Email = "neriyab@nutpa.com" });
+            var person_5 = context.Persons.Add(new Person { Id = Guid.Parse("90a3bf00-d693-41f1-8269-5208394a9b9d"), FirstName = "Alice", LastName = "Dias", Gender = Gender.F, BirthDate = Convert.ToDateTime("1988-07-23"), Cellphone = "021999982190", Email = "cetemal@loang.com" });
+            var person_6 = context.Persons.Add(new Person { Id = Guid.Parse("c61e1f8f-89a0-41c2-ad40-d90e39413b1f"), FirstName = "Tomás", LastName = "Araujo", Gender = Gender.M, BirthDate = Convert.ToDateTime("1992-03-19"), Cellphone = "021999987372", Email = "codazax@vps.com" });
+            var person_7 = context.Persons.Add(new Person { Id = Guid.Parse("72781650-eb64-46ea-a92d-6432b1ca48b9"), FirstName = "Kauan", LastName = "Pereira", Gender = Gender.M, BirthDate = Convert.ToDateTime("1983-04-26"), Cellphone = "021999366838", Email = "sojicur@car.com" });
 
             #endregion
 

@@ -86,6 +86,9 @@
                             itemFactory.getById(id)
                                 .success(
                                     function (data) {
+
+                                        data.Loaned == true ? data.Loaned = "Yes" : data.Loaned = "No";
+
                                         $scope.item = data;
                                     }
                                 )
@@ -111,4 +114,19 @@
                                 );
                         };
 
+                        $scope.edition = function () {
+
+                            itemFactory.edition($scope.item)
+                                .success(
+                                    function () {
+                                        $scope.list();
+                                        $scope.message = "Loan has been updated.";
+                                    }
+                                )
+                                .error(
+                                    function (e) {
+                                        $scope.message = e;
+                                    }
+                                );
+                        };
                     }]);

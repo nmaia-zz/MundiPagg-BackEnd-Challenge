@@ -38,5 +38,9 @@
                 return $http.get(urlBase + "/filterByMediaType/" + type);
             }
 
+            itemFactory.edition = function (model) {
+                return $http.put(urlBase + "/edition", model);
+            }
+
             return itemFactory;
         }]);

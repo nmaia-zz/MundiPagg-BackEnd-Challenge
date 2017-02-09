@@ -16,12 +16,14 @@ namespace Project.WebApi.Controllers
         private readonly ILoanApplicationService appLoan;
         private readonly IBookApplicationService appBook;
         private readonly IMediaApplicationService appMedia;
+        private readonly IPersonApplicationService appPerson;
 
-        public LoanController(ILoanApplicationService appLoan, IBookApplicationService appBook, IMediaApplicationService appMedia)
+        public LoanController(ILoanApplicationService appLoan, IBookApplicationService appBook, IMediaApplicationService appMedia, IPersonApplicationService appPerson)
         {
             this.appLoan = appLoan;
             this.appBook = appBook;
             this.appMedia = appMedia;
+            this.appPerson = appPerson;
         }
 
         [HttpPost]
@@ -32,23 +34,29 @@ namespace Project.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    if(model.Loaned == false)
+                    if (model.Loaned == false)
                     {
                         var book = appBook.FindById(model.ItemId);
                         var media = appMedia.FindById(model.ItemId);
 
                         Loan l = Mapper.Map<LoanModelRegister, Loan>(model);
-                        l.PersonId = model.PersonId;
+                        //l.PersonId = model.PersonId;
+                        l.Loaned = true;
+
+                        var guid = Guid.Parse(model.PersonId.ToString());
 
                         if (book != null)
                         {
                             var loan = appLoan.FindById(book.LoanId);
                             loan.Loaned = true;
+                            loan.Person = appPerson.FindById(guid);
+
                         }
                         else if (media != null)
                         {
                             var loan = appLoan.FindById(media.LoanId);
                             loan.Loaned = true;
+                            loan.Person = appPerson.FindById(guid);
                         }
 
                         appLoan.Insert(l);
@@ -64,30 +72,6 @@ namespace Project.WebApi.Controllers
                 {
                     var x = Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
                     return x;
-                }
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
-            }
-        }
-
-        [HttpPut]
-        [Route("edition")] //url: /api/loan/edition
-        public HttpResponseMessage Put(LoanModelEdition model)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    Loan l = Mapper.Map<LoanModelEdition, Loan>(model);
-                    appLoan.Update(l);
-
-                    return Request.CreateResponse(HttpStatusCode.OK);
-                }
-                else
-                {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
                 }
             }
             catch (Exception ex)

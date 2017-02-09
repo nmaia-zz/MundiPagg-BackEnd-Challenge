@@ -34,14 +34,6 @@ namespace Project.Infra.Repository.Configurations
                 .IsRequired();
 
             #endregion
-
-            #region ' Relationships '
-
-            HasRequired(p => p.Contact)
-                .WithRequiredDependent()
-                .Map(p => p.MapKey("ContactId"));
-
-            #endregion
         }
     }
 }

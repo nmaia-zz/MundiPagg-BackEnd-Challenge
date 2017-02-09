@@ -114,9 +114,12 @@
                 <td>{{ i.Genre }}</td>
                 <td>{{ i.Loaned }}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm">
+                    <button class="btn btn-primary btn-sm"
+                            data-target="#modalForUpdate"
+                            data-toggle="modal"
+                            ng-click="getById(i.Id)">
                         <span class="glyphicon glyphicon-pencil"></span>
-                        Edit
+                        Update Loan
                     </button>
                     <button class="btn btn-danger btn-sm"
                             data-target="#modalForDelete"
@@ -160,8 +163,7 @@
                     Delete
                 </button>
                 <button class="btn btn-warning btn-sm"
-                        data-dismiss="modal"
-                        ng-click="$modalInstance.dismiss('Cancel');">
+                        data-dismiss="modal">
                     <span class="glyphicon glyphicon-ban-circle"></span>
                     Cancel
                 </button>
@@ -170,39 +172,98 @@
     </div>
 </div>
 
-<!-- Janela modal para edição -->
-<!--<div id="janelaedicao" class="modal fade">
+<!-- Modal for Edition -->
+<div id="modalForUpdate" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header bg-primary">
-                <h2>Edição de Fornecedor</h2>
-                Para atualizar os dados, preencha os campos abaixo:
+                <h2>Item Edition</h2>
+                Change the loan status in order to update this field.
             </div>
+            <pre>{{ item | json }}</pre>
             <div class="modal-body">
-
-                <label>Código do Fornecedor:</label>
-                <input type="text" readonly="readonly" class="form-control"
-                       ng-model="fornecedor.IdFornecedor" />
-                <br />
-
-                <label>Nome do Fornecedor:</label>
-                <input type="text" class="form-control"
-                       ng-model="fornecedor.Nome" />
-                <br />
-
-                <label>Descrição:</label>
-                <textarea class="form-control"
-                          ng-model="fornecedor.Descricao"></textarea>
-                <br />
-
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Title:</label>
+                        <input type="text" readonly class="form-control" ng-model="item.Title" />
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Register Date:</label>
+                        <input type="text" readonly class="form-control" ng-model="item.RegisterDate" />
+                        <br />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Release Date:</label>
+                        <input type="text" readonly class="form-control" ng-model="item.ReleaseDate" />
+                        <br />
+                    </div>
+                </div>
+                <div class="row" ng-if='item.ItemType == "Book"'>
+                    <div class="col-md-4">
+                        <label>Author:</label>
+                        <input type="text" readonly class="form-control" ng-model="item.Author" />
+                        <br />
+                    </div>
+                    <div class="col-md-4">
+                        <label>Pages:</label>
+                        <input type="number" readonly class="form-control" ng-model="item.Pages" />
+                        <br />
+                    </div>
+                    <div class="col-md-4">
+                        <label>Publisher:</label>
+                        <input type="text" readonly class="form-control" ng-model="item.PublishingCompany" />
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Item Type</label>
+                        <input type="text" readonly ng-model="item.ItemType" class="form-control" />
+                    </div>
+                    <div class="col-md-4">
+                        <label>Genre</label>
+                        <input type="text" readonly ng-model="item.Genre" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Loaned?</label>
+                        <input type="text" readonly ng-model="item.Loaned" ng-value="" class="form-control" />
+                    </div>
+                </div>
+                <div class="row" ng-if='item.ItemType == "Media"'>
+                    <div class="col-md-4">
+                        <label>Media Type</label>
+                        <input type="text" readonly ng-model="item.MediaType" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <br />
+                        <label>First Name (Person)</label>
+                        <input type="text" readonly ng-model="item.FirstName" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <br />
+                        <label>Cellphone</label>
+                        <input type="text" readonly ng-model="item.Cellphone" class="form-control" />
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary btn-sm"
                         data-dismiss="modal"
-                        ng-click="atualizar()">
-                    Atualizar Fornecedor
+                        ng-click="edition()">
+                    <span class="glyphicon glyphicon-ok"></span>
+                    Change Loan Status
+                </button>
+                <button class="btn btn-warning btn-sm"
+                        data-dismiss="modal">
+                    <span class="glyphicon glyphicon-ban-circle"></span>
+                    Cancel
                 </button>
             </div>
         </div>
     </div>
-</div>-->
+</div>

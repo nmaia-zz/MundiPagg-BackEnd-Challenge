@@ -12,12 +12,6 @@ namespace Project.WebApi.Mappings
     {
         protected override void Configure()
         {
-            #region ' Contact '
-
-            Mapper.CreateMap<Contact, ContactModelConsultation>();
-
-            #endregion
-
             #region ' Person '
 
             Mapper.CreateMap<Person, PersonModelConsultation>();

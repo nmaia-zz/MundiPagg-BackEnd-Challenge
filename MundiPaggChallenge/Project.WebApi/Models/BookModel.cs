@@ -84,5 +84,7 @@ namespace Project.WebApi.Models
         public string Genre { get; set; }
         public Guid LoanId { get; set; }
         public bool Loaned { get; set; }
+        public string FirstName { get; set; }
+        public string Cellphone { get; set; }
     }
 }

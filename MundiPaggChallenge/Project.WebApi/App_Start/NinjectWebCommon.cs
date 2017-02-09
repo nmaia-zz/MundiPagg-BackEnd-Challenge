@@ -74,7 +74,6 @@ namespace Project.WebApi.App_Start
             #region ' Application Layer'
 
             kernel.Bind(typeof(IBaseApplicationService<,>)).To(typeof(BaseApplicationService<,>));
-            kernel.Bind(typeof(IContactApplicationService)).To(typeof(ContactApplicationService));
             kernel.Bind(typeof(IPersonApplicationService)).To(typeof(PersonApplicationService));
             kernel.Bind(typeof(ILoanApplicationService)).To(typeof(LoanApplicationService));
             kernel.Bind(typeof(IBookApplicationService)).To(typeof(BookApplicationService));
@@ -85,7 +84,6 @@ namespace Project.WebApi.App_Start
             #region ' Domain Layer '
 
             kernel.Bind(typeof(IBaseDomainService<,>)).To(typeof(BaseDomainService<,>));
-            kernel.Bind(typeof(IContactDomainService)).To(typeof(ContactDomainService));
             kernel.Bind(typeof(IPersonDomainService)).To(typeof(PersonDomainService));
             kernel.Bind(typeof(ILoanDomainService)).To(typeof(LoanDomainService));
             kernel.Bind(typeof(IBookDomainService)).To(typeof(BookDomainService));
@@ -96,7 +94,6 @@ namespace Project.WebApi.App_Start
             #region ' Infra Layer '
             
             kernel.Bind(typeof(IBaseRepository<,>)).To(typeof(BaseRepository<,>));
-            kernel.Bind(typeof(IContactRepository)).To(typeof(ContactRepository));
             kernel.Bind(typeof(IPersonRepository)).To(typeof(PersonRepository));
             kernel.Bind(typeof(ILoanRepository)).To(typeof(LoanRepository));
             kernel.Bind(typeof(IBookRepository)).To(typeof(BookRepository));

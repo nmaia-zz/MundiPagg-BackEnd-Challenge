@@ -42,18 +42,15 @@
   <ItemGroup>
     <Compile Include="Contracts\Repositories\IBaseRepository.cs" />
     <Compile Include="Contracts\Repositories\IBookRepository.cs" />
-    <Compile Include="Contracts\Repositories\IContactRepository.cs" />
     <Compile Include="Contracts\Repositories\ILoanRepository.cs" />
     <Compile Include="Contracts\Repositories\IMediaRepository.cs" />
     <Compile Include="Contracts\Repositories\IPersonRepository.cs" />
     <Compile Include="Contracts\Services\IBaseDomainService.cs" />
     <Compile Include="Contracts\Services\IBookDomainService.cs" />
-    <Compile Include="Contracts\Services\IContactDomainService.cs" />
     <Compile Include="Contracts\Services\ILoanDomainService.cs" />
     <Compile Include="Contracts\Services\IMediaDomainService.cs" />
     <Compile Include="Contracts\Services\IPersonDomainService.cs" />
     <Compile Include="Entities\Book.cs" />
-    <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\Media.cs" />
     <Compile Include="Entities\Types\MediaType.cs" />
     <Compile Include="Entities\Types\Genre.cs" />
@@ -65,7 +62,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaseDomainService.cs" />
     <Compile Include="Services\BookDomainService.cs" />
-    <Compile Include="Services\ContactDomainService.cs" />
     <Compile Include="Services\LoanDomainService.cs" />
     <Compile Include="Services\MediaDomainService.cs" />
     <Compile Include="Services\PersonDomainService.cs" />

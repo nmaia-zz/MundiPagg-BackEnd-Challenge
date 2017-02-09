@@ -30,11 +30,6 @@ namespace Project.WebApi.Controllers
                 {                   
 
                     Person p = Mapper.Map<PersonModelRegister, Person>(model);
-                    p.Contact = new Contact()
-                    {
-                        Cellphone = model.Cellphone,
-                        Email = model.Email
-                    };
                     
                     appPerson.Insert(p);
 

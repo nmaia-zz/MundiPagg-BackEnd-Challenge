@@ -16,12 +16,17 @@ namespace Project.WebApi.Controllers
         private readonly IBookApplicationService appBook;
         private readonly IMediaApplicationService appMedia;
         private readonly ILoanApplicationService appLoan;
+        private readonly IPersonApplicationService appPerson;
 
-        public ItemController(IBookApplicationService appBook, IMediaApplicationService appMedia, ILoanApplicationService appLoan)
+        public ItemController(IBookApplicationService appBook,
+                            IMediaApplicationService appMedia,
+                            ILoanApplicationService appLoan,
+                            IPersonApplicationService appPerson)
         {
             this.appBook = appBook;
             this.appMedia = appMedia;
             this.appLoan = appLoan;
+            this.appPerson = appPerson;
         }
 
         [HttpGet]
@@ -165,11 +170,44 @@ namespace Project.WebApi.Controllers
                 {
                     var model = Mapper.Map<Book, BookModelConsultation>(b);
 
+                    var loan = appLoan.FindById(model.LoanId);
+                    model.Loaned = loan.Loaned;
+
+                    if (loan.PersonId != null)
+                    {
+                        var guid = Guid.Parse(loan.PersonId.ToString());
+
+                        var person = appPerson.FindById(guid);
+
+                        if (person != null)
+                        {
+                            //var c = appContact.
+                            model.FirstName = person.FirstName;
+                            model.Cellphone = person.Cellphone;
+                        }
+                    }
+
                     return Request.CreateResponse(HttpStatusCode.OK, model);
                 }
                 else if (m != null)
                 {
                     var model = Mapper.Map<Media, MediaModelConsultation>(m);
+
+                    var loan = appLoan.FindById(model.LoanId);
+                    model.Loaned = loan.Loaned;
+
+                    if (loan.PersonId != null)
+                    {
+                        var guid = Guid.Parse(loan.PersonId.ToString());
+
+                        var person = appPerson.FindById(guid);
+
+                        if (person != null)
+                        {
+                            model.FirstName = person.FirstName;
+                            model.Cellphone = person.Cellphone;
+                        }
+                    }
 
                     return Request.CreateResponse(HttpStatusCode.OK, model);
                 }
@@ -208,7 +246,7 @@ namespace Project.WebApi.Controllers
                         throw new Exception("This Item cannot be deleted. It's currently loaned. Check it before deleting.");
                     }
                 }
-                else if(m != null) 
+                else if (m != null)
                 {
                     var loan = appLoan.FindById(m.LoanId);
 
@@ -227,6 +265,32 @@ namespace Project.WebApi.Controllers
                 {
                     throw new Exception("Item not found.");
                 }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPut]
+        [Route("edition")] //url: /api/item/edition
+        public HttpResponseMessage Put(ItemModelEdition model)
+        {
+            try
+            {
+                var loan = appLoan.FindById(model.LoanId);
+
+                if (loan.Loaned == true)
+                {
+                    loan.Loaned = false;
+                    appLoan.Update(loan);
+                }
+                else
+                {
+                    throw new Exception("It is not possible to change the loan status (false => true) without associating a person to the item.");
+                }
+
+                return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)
             {
@@ -294,7 +358,7 @@ namespace Project.WebApi.Controllers
 
                 return Request.CreateResponse(HttpStatusCode.OK, itemsList);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
