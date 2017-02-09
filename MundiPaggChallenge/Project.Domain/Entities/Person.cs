@@ -6,6 +6,11 @@ namespace Project.Domain.Entities
 {
     public class Person
     {
+        public Person()
+        {
+            this.Id = Guid.NewGuid();
+        }
+
         #region ' Properties '
 
         public virtual Guid Id { get; set; }

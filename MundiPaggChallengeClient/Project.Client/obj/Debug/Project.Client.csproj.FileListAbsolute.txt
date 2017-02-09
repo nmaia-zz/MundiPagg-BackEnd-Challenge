@@ -27,5 +27,6 @@ C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggC
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallengeClient\Project.Client\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallengeClient\Project.Client\bin\Microsoft.ApplicationInsights.xml
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallengeClient\Project.Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallengeClient\Project.Client\obj\Debug\Project.Client.csprojResolveAssemblyReference.cache
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallengeClient\Project.Client\obj\Debug\Project.Client.dll
 C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallengeClient\Project.Client\obj\Debug\Project.Client.pdb

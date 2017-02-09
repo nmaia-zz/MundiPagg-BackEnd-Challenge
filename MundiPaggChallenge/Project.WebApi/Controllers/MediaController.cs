@@ -14,10 +14,12 @@ namespace Project.WebApi.Controllers
     public class MediaController : ApiController
     {
         private readonly IMediaApplicationService appMedia;
+        private readonly ILoanApplicationService appLoan;
 
-        public MediaController(IMediaApplicationService appMedia)
+        public MediaController(IMediaApplicationService appMedia, ILoanApplicationService appLoan)
         {
             this.appMedia = appMedia;
+            this.appLoan = appLoan;
         }
 
         [HttpPost]
@@ -28,7 +30,12 @@ namespace Project.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    Loan l = new Loan();
+                    appLoan.Insert(l);
+
                     Media m = Mapper.Map<MediaModelRegister, Media>(model);
+                    m.Loan = l;
+
                     appMedia.Insert(m);
 
                     return Request.CreateResponse(HttpStatusCode.OK);

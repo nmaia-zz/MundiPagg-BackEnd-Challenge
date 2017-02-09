@@ -6,8 +6,8 @@ namespace Project.WebApi.Models
 {
     public class MediaModelRegister
     {
-        [MaxLength(100, ErrorMessage = "This field has {1} as the maximum number of characters.")]
-        [MinLength(6, ErrorMessage = "This field has {1} as the minimum number of characters.")]
+        [MaxLength(100, ErrorMessage = "The Title field has {1} as the maximum number of characters.")]
+        [MinLength(6, ErrorMessage = "The Title field has {1} as the minimum number of characters.")]
         [Required(ErrorMessage = "The Title is required.")]
         public string Title { get; set; }
 
@@ -17,8 +17,8 @@ namespace Project.WebApi.Models
         [Required(ErrorMessage = "The Release Date is required.")]
         public DateTime ReleaseDate { get; set; }
 
-        [Required(ErrorMessage = "The Item Type is required.")]
-        public string ItemType { get; set; }
+        //[Required(ErrorMessage = "The Item Type is required.")]
+        //public string ItemType { get; set; }
 
         [Required(ErrorMessage = "The Media Type is required.")]
         public string MediaType { get; set; }

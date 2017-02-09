@@ -1,0 +1,49 @@
+﻿<div class="page-header">
+    <h1>Loan <small>register</small></h1>
+</div>
+
+<!--<pre>{{ validations | json }}</pre>-->
+
+<div class="panel panel-default" ng-init="listItems();listPersons();">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-th"></span> Loan Data</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Item</label>
+                <select ng-model="model.itemId" class="form-control">
+                    <option value="">-- Choose here --</option>
+                    <option ng-repeat="item in items" value="{{item.id}}" ng-bind="item.value"></option>
+                </select>
+
+                <br />
+                <label>Person</label>
+                <select ng-model="model.personId" class="form-control">
+                    <option value="">-- Choose here --</option>
+                    <option ng-repeat="person in persons" value="{{person.id}}" ng-bind="person.value"></option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                <button class="btn btn-success btn-sm" ng-click="register()">
+                    <span class="glyphicon glyphicon-ok"></span>
+                    Save
+                </button>
+                <label> {{message}}</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label class="text-danger">{{error}}</label>
+                <div class="text-danger">
+                    <ul>
+                        <li ng-repeat="val in validations">{{val}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

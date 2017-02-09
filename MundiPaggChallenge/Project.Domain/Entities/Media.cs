@@ -9,6 +9,16 @@ namespace Project.Domain.Entities
 {
     public class Media : Item
     {
+        #region ' Constructors '
+
+        public Media()
+        {
+            this.Id = Guid.NewGuid();
+            this.ItemType = ItemType.Media;
+        }
+
+        #endregion
+
         #region ' Properties '
 
         #region ' Enums '

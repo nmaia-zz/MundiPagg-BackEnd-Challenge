@@ -8,9 +8,21 @@
             itemFactory.list = function () {
                 return $http.get(urlBase + "/list");
             };
+                        
+            itemFactory.listOnlyAvailableToLoan = function () {
+                return $http.get(urlBase + "/list/onlyAvailableToLoan");
+            };
 
             itemFactory.filterByItemType = function (type) {
                 return $http.get(urlBase + "/filterByItemType/" + type);
+            }
+
+            itemFactory.getById = function (id) {
+                return $http.get(urlBase + "/get/" + id);
+            }
+
+            itemFactory.delete = function (id) {
+                return $http.delete(urlBase + "/delete/" + id);
             }
 
             //resolved using angularjs $filter

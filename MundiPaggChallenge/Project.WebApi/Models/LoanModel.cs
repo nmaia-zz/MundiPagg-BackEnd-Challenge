@@ -5,17 +5,29 @@ namespace Project.WebApi.Models
 {
     public class LoanModelRegister
     {
-        [Required(ErrorMessage = "The Loaned field is required.")]
         public bool Loaned { get; set; }
+
+        [Required(ErrorMessage = "The Person is required.")]
+        public Guid PersonId { get; set; }
+
+        [Required(ErrorMessage = "The Item is required.")]
+        public Guid ItemId { get; set; }
+
     }
 
     public class LoanModelEdition
     {
-        [Required(ErrorMessage = "The Loan Id is required.")]
+        [Required(ErrorMessage = "The Loan is required.")]
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "The Loaned field is required.")]
         public bool Loaned { get; set; }
+
+        [Required(ErrorMessage = "The Person is required.")]
+        public Guid PersonId { get; set; }
+
+        [Required(ErrorMessage = "The Item is required.")]
+        public Guid ItemId { get; set; }
     }
 
     public class LoanModelConsultation

@@ -88,6 +88,152 @@ namespace Project.WebApi.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("list/onlyAvailableToLoan")] //url: /api/item/list/onlyAvailableToLoan
+        public HttpResponseMessage ListByAvailability()
+        {
+            try
+            {
+                var booksList = new List<BookModelConsultation>();
+                var mediasList = new List<MediaModelConsultation>();
+                var itemsList = new List<ItemModelConsultation>();
+
+                foreach (Book b in appBook.FindByAvailability(false))
+                {
+                    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
+                }
+
+                foreach (Media m in appMedia.FindByAvailability(false))
+                {
+                    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
+                }
+
+                foreach (var item in booksList)
+                {
+                    var loan = appLoan.FindById(item.LoanId);
+
+                    var x = new ItemModelConsultation()
+                    {
+                        Id = item.Id,
+                        Title = item.Title,
+                        ItemType = item.ItemType,
+                        Genre = item.Genre,
+                        RegisterDate = item.RegisterDate,
+                        ReleaseDate = item.ReleaseDate,
+                        Loaned = loan.Loaned
+                    };
+
+                    itemsList.Add(x);
+                }
+
+                foreach (var item in mediasList)
+                {
+                    var loan = appLoan.FindById(item.LoanId);
+
+                    var y = new ItemModelConsultation()
+                    {
+                        Id = item.Id,
+                        Title = item.Title,
+                        ItemType = item.ItemType,
+                        Genre = item.Genre,
+                        RegisterDate = item.RegisterDate,
+                        ReleaseDate = item.ReleaseDate,
+                        Loaned = loan.Loaned
+                    };
+
+                    itemsList.Add(y);
+                }
+
+                return Request.CreateResponse(HttpStatusCode.OK, itemsList);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("get/{id}")] //url: /api/item/get/{id}
+        public HttpResponseMessage GetValue(Guid id)
+        {
+            try
+            {
+                Book b = appBook.FindById(id);
+                Media m = appMedia.FindById(id);
+
+                if (b != null)
+                {
+                    var model = Mapper.Map<Book, BookModelConsultation>(b);
+
+                    return Request.CreateResponse(HttpStatusCode.OK, model);
+                }
+                else if (m != null)
+                {
+                    var model = Mapper.Map<Media, MediaModelConsultation>(m);
+
+                    return Request.CreateResponse(HttpStatusCode.OK, model);
+                }
+                else
+                {
+                    throw new Exception("Item not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("delete/{id}")] //url: /api/item/delete/{id}
+        public HttpResponseMessage Delete(Guid id)
+        {
+            try
+            {
+                Book b = appBook.FindById(id);
+                Media m = appMedia.FindById(id);
+
+                if (b != null)
+                {
+                    var loan = appLoan.FindById(b.LoanId);
+
+                    if (loan.Loaned == false)
+                    {
+                        appBook.Delete(b);
+
+                        return Request.CreateResponse(HttpStatusCode.OK);
+                    }
+                    else
+                    {
+                        throw new Exception("This Item cannot be deleted. It's currently loaned. Check it before deleting.");
+                    }
+                }
+                else if(m != null) 
+                {
+                    var loan = appLoan.FindById(m.LoanId);
+
+                    if (loan.Loaned == false)
+                    {
+                        appMedia.Delete(m);
+
+                        return Request.CreateResponse(HttpStatusCode.OK);
+                    }
+                    else
+                    {
+                        throw new Exception("This Item cannot be deleted. It's currently loaned. Check it before deleting.");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Item not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
         #region ' Filters '
 
         [HttpGet]

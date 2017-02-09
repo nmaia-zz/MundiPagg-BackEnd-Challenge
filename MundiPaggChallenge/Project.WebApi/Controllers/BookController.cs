@@ -14,10 +14,12 @@ namespace Project.WebApi.Controllers
     public class BookController : ApiController
     {
         private readonly IBookApplicationService appBook;
+        private readonly ILoanApplicationService appLoan;
 
-        public BookController(IBookApplicationService appBook)
+        public BookController(IBookApplicationService appBook, ILoanApplicationService appLoan)
         {
             this.appBook = appBook;
+            this.appLoan = appLoan;
         }
 
         [HttpPost]
@@ -28,7 +30,12 @@ namespace Project.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    Loan l = new Loan();
+                    appLoan.Insert(l);
+
                     Book b = Mapper.Map<BookModelRegister, Book>(model);
+                    b.Loan = l;
+
                     appBook.Insert(b);
 
                     return Request.CreateResponse(HttpStatusCode.OK);

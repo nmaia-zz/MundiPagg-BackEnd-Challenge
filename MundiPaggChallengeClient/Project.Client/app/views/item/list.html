@@ -38,7 +38,7 @@
 </div>
 
 <div>
-    <label>{{message}}</label>
+    <label style="color: red;">{{message}}</label>
 </div>
 
 <div class="panel panel-default">
@@ -118,12 +118,91 @@
                         <span class="glyphicon glyphicon-pencil"></span>
                         Edit
                     </button>
-                    <button class="btn btn-danger btn-sm">
-                        <span class="glyphicon glyphicon-remove"></span>
+                    <button class="btn btn-danger btn-sm"
+                            data-target="#modalForDelete"
+                            data-toggle="modal"
+                            ng-click="getById(i.Id)">
+                        <span class="glyphicon glyphicon-trash"></span>
                         Delete
                     </button>
                 </td>
             </tr>
         </tbody>
+        <tfoot class="panel-footer">
+            <tr>
+                <td colspan="7">
+                    <strong>Amount of items: {{ (items | filter: $parent.search).length }}</strong>
+                </td>
+            </tr>
+        </tfoot>
     </table>
 </div>
+
+<!-- Modal for deletion -->
+<div id="modalForDelete" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h2>Item Deletion</h2>
+                Would you like to delete the selected item?
+            </div>
+            <!--<pre>{{ item.Id | json}}</pre>-->
+            <div class="modal-body">
+                <label>Title: </label> {{item.Title}} <br />
+                <label>Item Type:</label> {{item.ItemType}} <br />
+                <label>Genre:</label> {{item.Genre}} <br />
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger btn-sm"
+                        data-dismiss="modal"
+                        ng-click="delete()">
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                </button>
+                <button class="btn btn-warning btn-sm"
+                        data-dismiss="modal"
+                        ng-click="$modalInstance.dismiss('Cancel');">
+                    <span class="glyphicon glyphicon-ban-circle"></span>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Janela modal para edição -->
+<!--<div id="janelaedicao" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h2>Edição de Fornecedor</h2>
+                Para atualizar os dados, preencha os campos abaixo:
+            </div>
+            <div class="modal-body">
+
+                <label>Código do Fornecedor:</label>
+                <input type="text" readonly="readonly" class="form-control"
+                       ng-model="fornecedor.IdFornecedor" />
+                <br />
+
+                <label>Nome do Fornecedor:</label>
+                <input type="text" class="form-control"
+                       ng-model="fornecedor.Nome" />
+                <br />
+
+                <label>Descrição:</label>
+                <textarea class="form-control"
+                          ng-model="fornecedor.Descricao"></textarea>
+                <br />
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm"
+                        data-dismiss="modal"
+                        ng-click="atualizar()">
+                    Atualizar Fornecedor
+                </button>
+            </div>
+        </div>
+    </div>
+</div>-->

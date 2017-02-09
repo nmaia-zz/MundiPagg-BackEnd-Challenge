@@ -1,3 +1,61 @@
 ﻿<div class="page-header">
     <h1>Media <small>register</small></h1>
 </div>
+
+<!--<pre>{{ validations | json }}</pre>-->
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-th"></span> Media Data</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="type here" ng-model="model.title" />
+
+                <br />
+                <label>Register Date</label>
+                <input type="date" class="form-control" ng-model="model.registerDate" />
+
+                <br />
+                <label>Release Date</label>
+                <input type="date" class="form-control" ng-model="model.releaseDate" />
+            </div>
+            <div class="col-md-4">
+                <label>Genre</label>
+                <select ng-model="model.genre" class="form-control">
+                    <option value="">-- Choose here --</option>
+                    <option ng-repeat="genre in genres" value="{{genre.id}}" ng-bind="genre.value"></option>
+                </select>
+
+                <br />
+                <label>Media Type</label>
+                <select ng-model="model.mediaType" class="form-control">
+                    <option value="">-- Choose here --</option>
+                    <option ng-repeat="media in medias" value="{{media.id}}" ng-bind="media.value"></option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                <button class="btn btn-success btn-sm" ng-click="register()">
+                    <span class="glyphicon glyphicon-ok"></span>
+                    Save
+                </button>
+                <label> {{message}}</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label class="text-danger">{{error}}</label>
+                <div class="text-danger">
+                    <ul>
+                        <li ng-repeat="val in validations">{{val}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201702071036212_UpdateMapping2.Designer.cs">
       <DependentUpon>201702071036212_UpdateMapping2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702091500252_UpdateMapping3.cs" />
+    <Compile Include="Migrations\201702091500252_UpdateMapping3.Designer.cs">
+      <DependentUpon>201702091500252_UpdateMapping3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
@@ -96,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702071036212_UpdateMapping2.resx">
       <DependentUpon>201702071036212_UpdateMapping2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702091500252_UpdateMapping3.resx">
+      <DependentUpon>201702091500252_UpdateMapping3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

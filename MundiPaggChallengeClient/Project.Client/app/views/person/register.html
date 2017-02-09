@@ -1,3 +1,62 @@
 ﻿<div class="page-header">
     <h1>Person <small>register</small></h1>
 </div>
+
+<!--<pre>{{ validations | json }}</pre>-->
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-th"></span> Person Data</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <label>First Name</label>
+                <input type="text" class="form-control" placeholder="type here" ng-model="model.firstName" />
+
+                <br />
+                <label>Last Name</label>
+                <input type="text" class="form-control" placeholder="type here" ng-model="model.lastName" />
+
+                <br />
+                <label>Birth Date</label>
+                <input type="date" class="form-control" ng-model="model.birthDate" />
+            </div>
+            <div class="col-md-4">
+                <label>Gender</label>
+                <select ng-model="model.gender" class="form-control">
+                    <option value="">-- Choose here --</option>
+                    <option ng-repeat="gender in genders" value="{{gender.id}}" ng-bind="gender.value"></option>
+                </select>
+
+                <br />
+                <label>Cellphone</label>
+                <input type="text" class="form-control" placeholder="type here" ng-model="model.cellphone" />
+
+                <br />
+                <label>E-mail</label>
+                <input type="text" class="form-control" placeholder="type here" ng-model="model.email" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                <button class="btn btn-success btn-sm" ng-click="register()">
+                    <span class="glyphicon glyphicon-ok"></span>
+                    Save
+                </button>
+                <label> {{message}}</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label class="text-danger">{{error}}</label>
+                <div class="text-danger">
+                    <ul>
+                        <li ng-repeat="val in validations">{{val}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,10 +14,14 @@ namespace Project.WebApi.Controllers
     public class LoanController : ApiController
     {
         private readonly ILoanApplicationService appLoan;
+        private readonly IBookApplicationService appBook;
+        private readonly IMediaApplicationService appMedia;
 
-        public LoanController(ILoanApplicationService appLoan)
+        public LoanController(ILoanApplicationService appLoan, IBookApplicationService appBook, IMediaApplicationService appMedia)
         {
             this.appLoan = appLoan;
+            this.appBook = appBook;
+            this.appMedia = appMedia;
         }
 
         [HttpPost]
@@ -28,14 +32,38 @@ namespace Project.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Loan l = Mapper.Map<LoanModelRegister, Loan>(model);
-                    appLoan.Insert(l);
+                    if(model.Loaned == false)
+                    {
+                        var book = appBook.FindById(model.ItemId);
+                        var media = appMedia.FindById(model.ItemId);
+
+                        Loan l = Mapper.Map<LoanModelRegister, Loan>(model);
+                        l.PersonId = model.PersonId;
+
+                        if (book != null)
+                        {
+                            var loan = appLoan.FindById(book.LoanId);
+                            loan.Loaned = true;
+                        }
+                        else if (media != null)
+                        {
+                            var loan = appLoan.FindById(media.LoanId);
+                            loan.Loaned = true;
+                        }
+
+                        appLoan.Insert(l);
+                    }
+                    else
+                    {
+                        throw new Exception("This item is already loaned.");
+                    }
 
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }
                 else
                 {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
+                    var x = Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
+                    return x;
                 }
             }
             catch (Exception ex)

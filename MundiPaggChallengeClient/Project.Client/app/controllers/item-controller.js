@@ -81,4 +81,34 @@
                                     }
                                 );
                         };
+
+                        $scope.getById = function (id) {
+                            itemFactory.getById(id)
+                                .success(
+                                    function (data) {
+                                        $scope.item = data;
+                                    }
+                                )
+                                .error(
+                                    function (e) {
+                                        $scope.message = e;
+                                    }
+                                );
+                        };
+
+                        $scope.delete = function () {
+                            itemFactory.delete($scope.item.Id)
+                                .success(
+                                    function () {
+                                        $scope.list();
+                                        $scope.message = "Item has been deleted.";
+                                    }
+                                )
+                                .error(
+                                    function (e) {
+                                        $scope.message = e;
+                                    }
+                                );
+                        };
+
                     }]);

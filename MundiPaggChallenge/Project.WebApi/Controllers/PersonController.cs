@@ -27,8 +27,15 @@ namespace Project.WebApi.Controllers
             try
             {
                 if (ModelState.IsValid)
-                {
+                {                   
+
                     Person p = Mapper.Map<PersonModelRegister, Person>(model);
+                    p.Contact = new Contact()
+                    {
+                        Cellphone = model.Cellphone,
+                        Email = model.Email
+                    };
+                    
                     appPerson.Insert(p);
 
                     return Request.CreateResponse(HttpStatusCode.OK);

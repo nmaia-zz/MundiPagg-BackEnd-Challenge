@@ -5,6 +5,16 @@ namespace Project.Domain.Entities
 {
     public class Loan
     {
+        #region ' Constructor '
+        
+        public Loan()
+        {
+            this.Id = Guid.NewGuid();
+            this.Loaned = false;
+        }
+
+        #endregion
+
         #region ' Properties '
 
         public virtual Guid Id { get; set; }

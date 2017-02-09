@@ -5,6 +5,10 @@
 
             var personFactory = {};
 
+            personFactory.list = function () {
+                return $http.get(urlBase + "/list");
+            };
+
             personFactory.register = function (model) {
                 return $http.post(urlBase + "/register", model);
             }

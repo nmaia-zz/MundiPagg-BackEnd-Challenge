@@ -41,6 +41,16 @@
             )
             // end - person routes
 
+            // begin - loan routes
+            .when(
+                '/loan/register', //url
+                {
+                    templateUrl: '/app/views/loan/register.html',
+                    controller: 'loan-controller'
+                }
+            )
+            // end - loan routes
+
             .otherwise(
                 {
                     redirect: '/index.html'

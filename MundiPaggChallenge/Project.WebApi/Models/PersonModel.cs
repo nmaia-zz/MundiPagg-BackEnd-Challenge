@@ -20,6 +20,16 @@ namespace Project.WebApi.Models
 
         [Required(ErrorMessage = "The Gender is required.")]
         public string Gender { get; set; }
+
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Please, insert only numbers.")]
+        [MaxLength(14, ErrorMessage = "This field has {1} as the limit number of characters.")]
+        [MinLength(9, ErrorMessage = "This field has {1} as the minimum number of characters.")]
+        [Required(ErrorMessage = "The Cellphone is required.")]
+        public string Cellphone { get; set; }
+
+        [EmailAddress(ErrorMessage = "Please, insert the email in the correct format.")]
+        [Required(ErrorMessage = "The e-mail is required.")]
+        public string Email { get; set; }
     }
 
     public class PersonModelEdition
@@ -42,6 +52,16 @@ namespace Project.WebApi.Models
 
         [Required(ErrorMessage = "The Gender is required.")]
         public string Gender { get; set; }
+
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Please, insert only numbers.")]
+        [MaxLength(14, ErrorMessage = "This field has {1} as the limit number of characters.")]
+        [MinLength(9, ErrorMessage = "This field has {1} as the minimum number of characters.")]
+        [Required(ErrorMessage = "The Cellphone is required.")]
+        public string Cellphone { get; set; }
+
+        [EmailAddress(ErrorMessage = "Please, insert the email in the correct format.")]
+        [Required(ErrorMessage = "The e-mail is required.")]
+        public string Email { get; set; }
     }
 
     public class PersonModelConsultation
@@ -51,5 +71,7 @@ namespace Project.WebApi.Models
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
         public string Gender { get; set; }
+        public string Cellphone { get; set; }
+        public string Email { get; set; }
     }
 }
