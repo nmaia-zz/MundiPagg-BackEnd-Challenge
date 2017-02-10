@@ -45,13 +45,34 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Project.Domain\Entities\BookTests.cs" />
+    <Compile Include="Project.Domain\Entities\MediaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.Application\Project.Application.csproj">
+      <Project>{9cca1c7c-6bda-4bbf-b753-94ca6edb64d8}</Project>
+      <Name>Project.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Domain\Project.Domain.csproj">
+      <Project>{76523fa7-4e33-44b8-b053-14032cfd082f}</Project>
+      <Name>Project.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Infra.Repository\Project.Infra.Repository.csproj">
+      <Project>{9382e27a-9270-43d0-a849-6c79b9f6904b}</Project>
+      <Name>Project.Infra.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.WebApi\Project.WebApi.csproj">
+      <Project>{22832740-054b-4288-9625-cce83f8cdaf1}</Project>
+      <Name>Project.WebApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

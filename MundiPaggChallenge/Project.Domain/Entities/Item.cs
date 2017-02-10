@@ -22,8 +22,18 @@ namespace Project.Domain.Entities
 
         #region ' Relationships '
 
+        //ToDo: put these properties as protected in order to be changed by the SetLoan method
         public virtual Guid LoanId { get; set; }
         public virtual Loan Loan { get; set; }
+
+        public void SetLoan(Loan loan)
+        {
+            if (loan == null) throw new ArgumentNullException(nameof(loan));
+            if (loan.Id == Guid.Empty) throw new ArgumentNullException(nameof(loan));
+
+            Loan = loan;
+            LoanId = loan.Id;
+        }
 
         #endregion
     }
