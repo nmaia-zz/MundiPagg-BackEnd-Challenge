@@ -3,8 +3,8 @@ using System;
 
 namespace Project.Domain.Contracts.Services
 {
-    public interface ILoanDomainService : IBaseDomainService<Loan, Guid>
-    {
+    //public interface ILoanDomainService : IBaseDomainService<Loan, Guid>
+    //{
 
-    }
+    //}
 }

@@ -3,7 +3,7 @@ using System;
 
 namespace Project.Domain.Contracts.Repositories
 {
-    public interface ILoanRepository : IBaseRepository<Loan, Guid>
-    {
-    }
+    //public interface ILoanRepository : IBaseRepository<Loan, Guid>
+    //{
+    //}
 }

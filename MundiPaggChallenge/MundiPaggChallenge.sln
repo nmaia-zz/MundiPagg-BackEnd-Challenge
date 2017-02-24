@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Unit Tests Layer", "05
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.UnitTests", "Project.UnitTests\Project.UnitTests.csproj", "{8526D37D-B802-4E0D-9007-9355EA991DDF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 - Elastic Search Layer", "06 - Elastic Search Layer", "{2FAD079E-0FA4-4F3A-B134-0DCE47E13AB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.ElasticSearch", "Project.ElasticSearch\Project.ElasticSearch.csproj", "{30F109E8-A1E4-40CA-82C4-88C6FD49E757}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{8526D37D-B802-4E0D-9007-9355EA991DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8526D37D-B802-4E0D-9007-9355EA991DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8526D37D-B802-4E0D-9007-9355EA991DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F109E8-A1E4-40CA-82C4-88C6FD49E757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F109E8-A1E4-40CA-82C4-88C6FD49E757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F109E8-A1E4-40CA-82C4-88C6FD49E757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F109E8-A1E4-40CA-82C4-88C6FD49E757}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +67,6 @@ Global
 		{76523FA7-4E33-44B8-B053-14032CFD082F} = {1BE29B68-B041-49AC-8F19-6BA84A989889}
 		{9382E27A-9270-43D0-A849-6C79B9F6904B} = {4590D997-6EEC-4C1D-8F02-536107619AE1}
 		{8526D37D-B802-4E0D-9007-9355EA991DDF} = {999A3B30-AD69-4759-A4F8-A909FA91CF24}
+		{30F109E8-A1E4-40CA-82C4-88C6FD49E757} = {2FAD079E-0FA4-4F3A-B134-0DCE47E13AB4}
 	EndGlobalSection
 EndGlobal

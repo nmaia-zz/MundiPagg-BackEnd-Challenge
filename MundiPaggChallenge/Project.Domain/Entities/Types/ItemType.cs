@@ -3,6 +3,7 @@
     public enum ItemType
     {
         Book = 1,
-        Media = 2
+        CD = 2,
+        DVD = 3
     }
 }

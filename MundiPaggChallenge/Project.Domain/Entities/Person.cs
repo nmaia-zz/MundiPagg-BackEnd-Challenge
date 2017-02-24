@@ -6,10 +6,14 @@ namespace Project.Domain.Entities
 {
     public class Person
     {
+        #region ' Constructors '
+
         public Person()
         {
             this.Id = Guid.NewGuid();
         }
+
+        #endregion
 
         #region ' Properties '
 
@@ -30,7 +34,9 @@ namespace Project.Domain.Entities
 
         #region ' Relationships '
 
-        public virtual ICollection<Loan> Loans { get; set; }
+        //public virtual ICollection<Loan> Loans { get; set; }
+
+        public ICollection<Item> Items { get; set; }
 
         #endregion
     }

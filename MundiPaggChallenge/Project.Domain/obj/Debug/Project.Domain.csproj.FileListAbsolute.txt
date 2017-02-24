@@ -1,4 +1,0 @@
-C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Domain\bin\Debug\Project.Domain.dll
-C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Domain\bin\Debug\Project.Domain.pdb
-C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Domain\obj\Debug\Project.Domain.dll
-C:\Users\gmnat\OneDrive\Documentos\GitHub\MundiPagg-BackEnd-Challenge\MundiPaggChallenge\Project.Domain\obj\Debug\Project.Domain.pdb

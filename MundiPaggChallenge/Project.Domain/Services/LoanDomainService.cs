@@ -5,13 +5,13 @@ using System;
 
 namespace Project.Domain.Services
 {
-    public class LoanDomainService : BaseDomainService<Loan, Guid>, ILoanDomainService
-    {
-        private readonly ILoanRepository repository;
+    //public class LoanDomainService : BaseDomainService<Loan, Guid>, ILoanDomainService
+    //{
+    //    private readonly ILoanRepository repository;
 
-        public LoanDomainService(ILoanRepository repository) : base(repository)
-        {
-            this.repository = repository;
-        }
-    }
+    //    public LoanDomainService(ILoanRepository repository) : base(repository)
+    //    {
+    //        this.repository = repository;
+    //    }
+    //}
 }
