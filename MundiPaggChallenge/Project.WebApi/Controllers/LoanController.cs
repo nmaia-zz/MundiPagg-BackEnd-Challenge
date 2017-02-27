@@ -32,47 +32,47 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    if (model.Loaned == false)
-                    {
-                        var book = appBook.FindById(model.ItemId);
-                        var media = appMedia.FindById(model.ItemId);
+                //if (ModelState.IsValid)
+                //{
+                //    if (model.Loaned == false)
+                //    {
+                //        var book = appBook.FindById(model.ItemId);
+                //        var media = appMedia.FindById(model.ItemId);
 
-                        Loan l = Mapper.Map<LoanModelRegister, Loan>(model);
-                        //l.PersonId = model.PersonId;
-                        l.Loaned = true;
+                //        Loan l = Mapper.Map<LoanModelRegister, Loan>(model);
+                //        //l.PersonId = model.PersonId;
+                //        l.Loaned = true;
 
-                        var guid = Guid.Parse(model.PersonId.ToString());
+                //        var guid = Guid.Parse(model.PersonId.ToString());
 
-                        if (book != null)
-                        {
-                            var loan = appLoan.FindById(book.LoanId);
-                            loan.Loaned = true;
-                            loan.Person = appPerson.FindById(guid);
+                //        if (book != null)
+                //        {
+                //            var loan = appLoan.FindById(book.LoanId);
+                //            loan.Loaned = true;
+                //            loan.Person = appPerson.FindById(guid);
 
-                        }
-                        else if (media != null)
-                        {
-                            var loan = appLoan.FindById(media.LoanId);
-                            loan.Loaned = true;
-                            loan.Person = appPerson.FindById(guid);
-                        }
+                //        }
+                //        else if (media != null)
+                //        {
+                //            var loan = appLoan.FindById(media.LoanId);
+                //            loan.Loaned = true;
+                //            loan.Person = appPerson.FindById(guid);
+                //        }
 
-                        appLoan.Insert(l);
-                    }
-                    else
-                    {
-                        throw new Exception("This item is already loaned.");
-                    }
+                //        appLoan.Insert(l);
+                //    }
+                //    else
+                //    {
+                //        throw new Exception("This item is already loaned.");
+                //    }
 
                     return Request.CreateResponse(HttpStatusCode.OK);
-                }
-                else
-                {
-                    var x = Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
-                    return x;
-                }
+                //}
+                //else
+                //{
+                //    var x = Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
+                //    return x;
+                //}
             }
             catch (Exception ex)
             {
@@ -86,18 +86,18 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                Loan l = appLoan.FindById(id);
+                //Loan l = appLoan.FindById(id);
 
-                if (l != null)
-                {
-                    appLoan.Delete(l);
+                //if (l != null)
+                //{
+                //    appLoan.Delete(l);
 
                     return Request.CreateResponse(HttpStatusCode.OK);
-                }
-                else
-                {
-                    throw new Exception("Loan not found.");
-                }
+                //}
+                //else
+                //{
+                //    throw new Exception("Loan not found.");
+                //}
             }
             catch (Exception ex)
             {
@@ -111,14 +111,14 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                var loansList = new List<LoanModelConsultation>();
+                //var loansList = new List<LoanModelConsultation>();
 
-                foreach (Loan l in appLoan.FindAll())
-                {
-                    loansList.Add(Mapper.Map<Loan, LoanModelConsultation>(l));
-                }
+                //foreach (Loan l in appLoan.FindAll())
+                //{
+                //    loansList.Add(Mapper.Map<Loan, LoanModelConsultation>(l));
+                //}
 
-                return Request.CreateResponse(HttpStatusCode.OK, loansList);
+                return Request.CreateResponse(HttpStatusCode.OK/*, loansList*/);
             }
             catch (Exception ex)
             {
@@ -132,18 +132,18 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                Loan l = appLoan.FindById(id);
+                //Loan l = appLoan.FindById(id);
 
-                if (l != null)
-                {
-                    var model = Mapper.Map<Loan, LoanModelConsultation>(l);
+                //if (l != null)
+                //{
+                //    var model = Mapper.Map<Loan, LoanModelConsultation>(l);
 
-                    return Request.CreateResponse(HttpStatusCode.OK, model);
-                }
-                else
-                {
-                    throw new Exception("Loan not found");
-                }
+                    return Request.CreateResponse(HttpStatusCode.OK/*, model*/);
+                //}
+                //else
+                //{
+                //    throw new Exception("Loan not found");
+                //}
             }
             catch (Exception ex)
             {
@@ -169,7 +169,7 @@ namespace Project.WebApi.Controllers
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-            appLoan.Dispose();
+            //appLoan.Dispose();
         }
     }
 }

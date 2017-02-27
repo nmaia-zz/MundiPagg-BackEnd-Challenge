@@ -65,6 +65,10 @@
       <Project>{76523fa7-4e33-44b8-b053-14032cfd082f}</Project>
       <Name>Project.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Project.ElasticSearch\Project.ElasticSearch.csproj">
+      <Project>{30f109e8-a1e4-40ca-82c4-88c6fd49e757}</Project>
+      <Name>Project.ElasticSearch</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Project.Infra.Repository\Project.Infra.Repository.csproj">
       <Project>{9382e27a-9270-43d0-a849-6c79b9f6904b}</Project>
       <Name>Project.Infra.Repository</Name>

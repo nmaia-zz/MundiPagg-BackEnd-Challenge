@@ -39,19 +39,19 @@ namespace Project.WebApi.Controllers
                 var mediasList = new List<MediaModelConsultation>();
                 var itemsList = new List<ItemModelConsultation>();
 
-                foreach (Book b in appBook.FindAll())
-                {
-                    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
-                }
+                //foreach (Book b in appBook.FindAll())
+                //{
+                //    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
+                //}
 
-                foreach (Media m in appMedia.FindAll())
-                {
-                    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
-                }
+                //foreach (Media m in appMedia.FindAll())
+                //{
+                //    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
+                //}
 
                 foreach (var item in booksList)
                 {
-                    var loan = appLoan.FindById(item.LoanId);
+                    //var loan = appLoan.FindById(item.LoanId);
 
                     var x = new ItemModelConsultation()
                     {
@@ -61,7 +61,7 @@ namespace Project.WebApi.Controllers
                         Genre = item.Genre,
                         RegisterDate = item.RegisterDate,
                         ReleaseDate = item.ReleaseDate,
-                        Loaned = loan.Loaned
+                        //Loaned = loan.Loaned
                     };
 
                     itemsList.Add(x);
@@ -69,7 +69,7 @@ namespace Project.WebApi.Controllers
 
                 foreach (var item in mediasList)
                 {
-                    var loan = appLoan.FindById(item.LoanId);
+                    //var loan = appLoan.FindById(item.LoanId);
 
                     var y = new ItemModelConsultation()
                     {
@@ -79,7 +79,7 @@ namespace Project.WebApi.Controllers
                         Genre = item.Genre,
                         RegisterDate = item.RegisterDate,
                         ReleaseDate = item.ReleaseDate,
-                        Loaned = loan.Loaned
+                        //Loaned = loan.Loaned
                     };
 
                     itemsList.Add(y);
@@ -103,19 +103,19 @@ namespace Project.WebApi.Controllers
                 var mediasList = new List<MediaModelConsultation>();
                 var itemsList = new List<ItemModelConsultation>();
 
-                foreach (Book b in appBook.FindByAvailability(false))
-                {
-                    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
-                }
+                //foreach (Book b in appBook.FindByAvailability(false))
+                //{
+                //    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
+                //}
 
-                foreach (Media m in appMedia.FindByAvailability(false))
-                {
-                    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
-                }
+                //foreach (Media m in appMedia.FindByAvailability(false))
+                //{
+                //    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
+                //}
 
                 foreach (var item in booksList)
                 {
-                    var loan = appLoan.FindById(item.LoanId);
+                    //var loan = appLoan.FindById(item.LoanId);
 
                     var x = new ItemModelConsultation()
                     {
@@ -125,7 +125,7 @@ namespace Project.WebApi.Controllers
                         Genre = item.Genre,
                         RegisterDate = item.RegisterDate,
                         ReleaseDate = item.ReleaseDate,
-                        Loaned = loan.Loaned
+                        //Loaned = loan.Loaned
                     };
 
                     itemsList.Add(x);
@@ -133,7 +133,7 @@ namespace Project.WebApi.Controllers
 
                 foreach (var item in mediasList)
                 {
-                    var loan = appLoan.FindById(item.LoanId);
+                    //var loan = appLoan.FindById(item.LoanId);
 
                     var y = new ItemModelConsultation()
                     {
@@ -143,7 +143,7 @@ namespace Project.WebApi.Controllers
                         Genre = item.Genre,
                         RegisterDate = item.RegisterDate,
                         ReleaseDate = item.ReleaseDate,
-                        Loaned = loan.Loaned
+                        //Loaned = loan.Loaned
                     };
 
                     itemsList.Add(y);
@@ -163,58 +163,58 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                Book b = appBook.FindById(id);
-                Media m = appMedia.FindById(id);
+                //Book b = appBook.FindById(id);
+                //Media m = appMedia.FindById(id);
 
-                if (b != null)
-                {
-                    var model = Mapper.Map<Book, BookModelConsultation>(b);
+                //if (b != null)
+                //{
+                //    var model = Mapper.Map<Book, BookModelConsultation>(b);
 
-                    var loan = appLoan.FindById(model.LoanId);
-                    model.Loaned = loan.Loaned;
+                //    var loan = appLoan.FindById(model.LoanId);
+                //    model.Loaned = loan.Loaned;
 
-                    if (loan.PersonId != null)
-                    {
-                        var guid = Guid.Parse(loan.PersonId.ToString());
+                //    if (loan.PersonId != null)
+                //    {
+                //        var guid = Guid.Parse(loan.PersonId.ToString());
 
-                        var person = appPerson.FindById(guid);
+                //        var person = appPerson.FindById(guid);
 
-                        if (person != null)
-                        {
-                            //var c = appContact.
-                            model.FirstName = person.FirstName;
-                            model.Cellphone = person.Cellphone;
-                        }
-                    }
+                //        if (person != null)
+                //        {
+                //            var c = appContact.
+                //            model.FirstName = person.FirstName;
+                //            model.Cellphone = person.Cellphone;
+                //        }
+                //    }
 
-                    return Request.CreateResponse(HttpStatusCode.OK, model);
-                }
-                else if (m != null)
-                {
-                    var model = Mapper.Map<Media, MediaModelConsultation>(m);
+                    return Request.CreateResponse(HttpStatusCode.OK/*, model*/);
+                //}
+                //else if (m != null)
+                //{
+                //    var model = Mapper.Map<Media, MediaModelConsultation>(m);
 
-                    var loan = appLoan.FindById(model.LoanId);
-                    model.Loaned = loan.Loaned;
+                //    var loan = appLoan.FindById(model.LoanId);
+                //    model.Loaned = loan.Loaned;
 
-                    if (loan.PersonId != null)
-                    {
-                        var guid = Guid.Parse(loan.PersonId.ToString());
+                //    if (loan.PersonId != null)
+                //    {
+                //        var guid = Guid.Parse(loan.PersonId.ToString());
 
-                        var person = appPerson.FindById(guid);
+                //        var person = appPerson.FindById(guid);
 
-                        if (person != null)
-                        {
-                            model.FirstName = person.FirstName;
-                            model.Cellphone = person.Cellphone;
-                        }
-                    }
+                //        if (person != null)
+                //        {
+                //            model.FirstName = person.FirstName;
+                //            model.Cellphone = person.Cellphone;
+                //        }
+                //    }
 
-                    return Request.CreateResponse(HttpStatusCode.OK, model);
-                }
-                else
-                {
-                    throw new Exception("Item not found.");
-                }
+                //    return Request.CreateResponse(HttpStatusCode.OK, model);
+                //}
+                //else
+                //{
+                //    throw new Exception("Item not found.");
+                //}
             }
             catch (Exception ex)
             {
@@ -228,43 +228,43 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                Book b = appBook.FindById(id);
-                Media m = appMedia.FindById(id);
+                //Book b = appBook.FindById(id);
+                //Media m = appMedia.FindById(id);
 
-                if (b != null)
-                {
-                    var loan = appLoan.FindById(b.LoanId);
+                //if (b != null)
+                //{
+                //    var loan = appLoan.FindById(b.LoanId);
 
-                    if (loan.Loaned == false)
-                    {
-                        appBook.Delete(b);
-
-                        return Request.CreateResponse(HttpStatusCode.OK);
-                    }
-                    else
-                    {
-                        throw new Exception("This Item cannot be deleted. It's currently loaned. Check it before deleting.");
-                    }
-                }
-                else if (m != null)
-                {
-                    var loan = appLoan.FindById(m.LoanId);
-
-                    if (loan.Loaned == false)
-                    {
-                        appMedia.Delete(m);
+                //    if (loan.Loaned == false)
+                //    {
+                //        appBook.Delete(b);
 
                         return Request.CreateResponse(HttpStatusCode.OK);
-                    }
-                    else
-                    {
-                        throw new Exception("This Item cannot be deleted. It's currently loaned. Check it before deleting.");
-                    }
-                }
-                else
-                {
-                    throw new Exception("Item not found.");
-                }
+                //    }
+                //    else
+                //    {
+                //        throw new Exception("This Item cannot be deleted. It's currently loaned. Check it before deleting.");
+                //    }
+                //}
+                //else if (m != null)
+                //{
+                //    var loan = appLoan.FindById(m.LoanId);
+
+                //    if (loan.Loaned == false)
+                //    {
+                //        appMedia.Delete(m);
+
+                //        return Request.CreateResponse(HttpStatusCode.OK);
+                //    }
+                //    else
+                //    {
+                //        throw new Exception("This Item cannot be deleted. It's currently loaned. Check it before deleting.");
+                //    }
+                //}
+                //else
+                //{
+                //    throw new Exception("Item not found.");
+                //}
             }
             catch (Exception ex)
             {
@@ -278,17 +278,17 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                var loan = appLoan.FindById(model.LoanId);
+                //var loan = appLoan.FindById(model.LoanId);
 
-                if (loan.Loaned == true)
-                {
-                    loan.Loaned = false;
-                    appLoan.Update(loan);
-                }
-                else
-                {
-                    throw new Exception("It is not possible to change the loan status (false => true) without associating a person to the item.");
-                }
+                //if (loan.Loaned == true)
+                //{
+                //    loan.Loaned = false;
+                //    appLoan.Update(loan);
+                //}
+                //else
+                //{
+                //    throw new Exception("It is not possible to change the loan status (false => true) without associating a person to the item.");
+                //}
 
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
@@ -306,57 +306,57 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                var booksList = new List<BookModelConsultation>();
-                var mediasList = new List<MediaModelConsultation>();
-                var itemsList = new List<ItemModelConsultation>();
+                //var booksList = new List<BookModelConsultation>();
+                //var mediasList = new List<MediaModelConsultation>();
+                //var itemsList = new List<ItemModelConsultation>();
 
-                foreach (Book b in appBook.FindByItemType(type))
-                {
-                    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
-                }
+                //foreach (Book b in appBook.FindByItemType(type))
+                //{
+                //    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
+                //}
 
-                foreach (Media m in appMedia.FindByItemType(type))
-                {
-                    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
-                }
+                //foreach (Media m in appMedia.FindByItemType(type))
+                //{
+                //    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
+                //}
 
-                foreach (var item in booksList)
-                {
-                    var loan = appLoan.FindById(item.LoanId);
+                //foreach (var item in booksList)
+                //{
+                //    var loan = appLoan.FindById(item.LoanId);
 
-                    var x = new ItemModelConsultation()
-                    {
-                        Id = item.Id,
-                        Title = item.Title,
-                        ItemType = item.ItemType,
-                        Genre = item.Genre,
-                        RegisterDate = item.RegisterDate,
-                        ReleaseDate = item.ReleaseDate,
-                        Loaned = loan.Loaned
-                    };
+                //    var x = new ItemModelConsultation()
+                //    {
+                //        Id = item.Id,
+                //        Title = item.Title,
+                //        ItemType = item.ItemType,
+                //        Genre = item.Genre,
+                //        RegisterDate = item.RegisterDate,
+                //        ReleaseDate = item.ReleaseDate,
+                //        Loaned = loan.Loaned
+                //    };
 
-                    itemsList.Add(x);
-                }
+                //    itemsList.Add(x);
+                //}
 
-                foreach (var item in mediasList)
-                {
-                    var loan = appLoan.FindById(item.LoanId);
+                //foreach (var item in mediasList)
+                //{
+                //    var loan = appLoan.FindById(item.LoanId);
 
-                    var y = new ItemModelConsultation()
-                    {
-                        Id = item.Id,
-                        Title = item.Title,
-                        ItemType = item.ItemType,
-                        Genre = item.Genre,
-                        RegisterDate = item.RegisterDate,
-                        ReleaseDate = item.ReleaseDate,
-                        Loaned = loan.Loaned
-                    };
+                //    var y = new ItemModelConsultation()
+                //    {
+                //        Id = item.Id,
+                //        Title = item.Title,
+                //        ItemType = item.ItemType,
+                //        Genre = item.Genre,
+                //        RegisterDate = item.RegisterDate,
+                //        ReleaseDate = item.ReleaseDate,
+                //        Loaned = loan.Loaned
+                //    };
 
-                    itemsList.Add(y);
-                }
+                //    itemsList.Add(y);
+                //}
 
-                return Request.CreateResponse(HttpStatusCode.OK, itemsList);
+                return Request.CreateResponse(HttpStatusCode.OK/*, itemsList*/);
             }
             catch (Exception ex)
             {
@@ -370,57 +370,57 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                var booksList = new List<BookModelConsultation>();
-                var mediasList = new List<MediaModelConsultation>();
-                var itemsList = new List<ItemModelConsultation>();
+                //var booksList = new List<BookModelConsultation>();
+                //var mediasList = new List<MediaModelConsultation>();
+                //var itemsList = new List<ItemModelConsultation>();
 
-                foreach (Book b in appBook.FindByKeyWord(keyword))
-                {
-                    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
-                }
+                //foreach (Book b in appBook.FindByKeyWord(keyword))
+                //{
+                //    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
+                //}
 
-                foreach (Media m in appMedia.FindByKeyWord(keyword))
-                {
-                    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
-                }
+                //foreach (Media m in appMedia.FindByKeyWord(keyword))
+                //{
+                //    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
+                //}
 
-                foreach (var item in booksList)
-                {
-                    var loan = appLoan.FindById(item.LoanId);
+                //foreach (var item in booksList)
+                //{
+                //    var loan = appLoan.FindById(item.LoanId);
 
-                    var x = new ItemModelConsultation()
-                    {
-                        Id = item.Id,
-                        Title = item.Title,
-                        ItemType = item.ItemType,
-                        Genre = item.Genre,
-                        RegisterDate = item.RegisterDate,
-                        ReleaseDate = item.ReleaseDate,
-                        Loaned = loan.Loaned
-                    };
+                //    var x = new ItemModelConsultation()
+                //    {
+                //        Id = item.Id,
+                //        Title = item.Title,
+                //        ItemType = item.ItemType,
+                //        Genre = item.Genre,
+                //        RegisterDate = item.RegisterDate,
+                //        ReleaseDate = item.ReleaseDate,
+                //        Loaned = loan.Loaned
+                //    };
 
-                    itemsList.Add(x);
-                }
+                //    itemsList.Add(x);
+                //}
 
-                foreach (var item in mediasList)
-                {
-                    var loan = appLoan.FindById(item.LoanId);
+                //foreach (var item in mediasList)
+                //{
+                //    var loan = appLoan.FindById(item.LoanId);
 
-                    var y = new ItemModelConsultation()
-                    {
-                        Id = item.Id,
-                        Title = item.Title,
-                        ItemType = item.ItemType,
-                        Genre = item.Genre,
-                        RegisterDate = item.RegisterDate,
-                        ReleaseDate = item.ReleaseDate,
-                        Loaned = loan.Loaned
-                    };
+                //    var y = new ItemModelConsultation()
+                //    {
+                //        Id = item.Id,
+                //        Title = item.Title,
+                //        ItemType = item.ItemType,
+                //        Genre = item.Genre,
+                //        RegisterDate = item.RegisterDate,
+                //        ReleaseDate = item.ReleaseDate,
+                //        Loaned = loan.Loaned
+                //    };
 
-                    itemsList.Add(y);
-                }
+                //    itemsList.Add(y);
+                //}
 
-                return Request.CreateResponse(HttpStatusCode.OK, itemsList);
+                return Request.CreateResponse(HttpStatusCode.OK/*, itemsList*/);
             }
             catch (Exception ex)
             {
@@ -434,57 +434,57 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                var booksList = new List<BookModelConsultation>();
-                var mediasList = new List<MediaModelConsultation>();
-                var itemsList = new List<ItemModelConsultation>();
+                //var booksList = new List<BookModelConsultation>();
+                //var mediasList = new List<MediaModelConsultation>();
+                //var itemsList = new List<ItemModelConsultation>();
 
-                foreach (Book b in appBook.FindByAvailability(loaned))
-                {
-                    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
-                }
+                //foreach (Book b in appBook.FindByAvailability(loaned))
+                //{
+                //    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
+                //}
 
-                foreach (Media m in appMedia.FindByAvailability(loaned))
-                {
-                    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
-                }
+                //foreach (Media m in appMedia.FindByAvailability(loaned))
+                //{
+                //    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
+                //}
 
-                foreach (var item in booksList)
-                {
-                    var loan = appLoan.FindById(item.LoanId);
+                //foreach (var item in booksList)
+                //{
+                //    var loan = appLoan.FindById(item.LoanId);
 
-                    var x = new ItemModelConsultation()
-                    {
-                        Id = item.Id,
-                        Title = item.Title,
-                        ItemType = item.ItemType,
-                        Genre = item.Genre,
-                        RegisterDate = item.RegisterDate,
-                        ReleaseDate = item.ReleaseDate,
-                        Loaned = loan.Loaned
-                    };
+                //    var x = new ItemModelConsultation()
+                //    {
+                //        Id = item.Id,
+                //        Title = item.Title,
+                //        ItemType = item.ItemType,
+                //        Genre = item.Genre,
+                //        RegisterDate = item.RegisterDate,
+                //        ReleaseDate = item.ReleaseDate,
+                //        Loaned = loan.Loaned
+                //    };
 
-                    itemsList.Add(x);
-                }
+                //    itemsList.Add(x);
+                //}
 
-                foreach (var item in mediasList)
-                {
-                    var loan = appLoan.FindById(item.LoanId);
+                //foreach (var item in mediasList)
+                //{
+                //    var loan = appLoan.FindById(item.LoanId);
 
-                    var y = new ItemModelConsultation()
-                    {
-                        Id = item.Id,
-                        Title = item.Title,
-                        ItemType = item.ItemType,
-                        Genre = item.Genre,
-                        RegisterDate = item.RegisterDate,
-                        ReleaseDate = item.ReleaseDate,
-                        Loaned = loan.Loaned
-                    };
+                //    var y = new ItemModelConsultation()
+                //    {
+                //        Id = item.Id,
+                //        Title = item.Title,
+                //        ItemType = item.ItemType,
+                //        Genre = item.Genre,
+                //        RegisterDate = item.RegisterDate,
+                //        ReleaseDate = item.ReleaseDate,
+                //        Loaned = loan.Loaned
+                //    };
 
-                    itemsList.Add(y);
-                }
+                //    itemsList.Add(y);
+                //}
 
-                return Request.CreateResponse(HttpStatusCode.OK, itemsList);
+                return Request.CreateResponse(HttpStatusCode.OK/*, itemsList*/);
             }
             catch (Exception ex)
             {
@@ -498,34 +498,34 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                var booksList = new List<BookModelConsultation>();
-                var mediasList = new List<MediaModelConsultation>();
-                var itemsList = new List<ItemModelConsultation>();
+                //var booksList = new List<BookModelConsultation>();
+                //var mediasList = new List<MediaModelConsultation>();
+                //var itemsList = new List<ItemModelConsultation>();
 
-                foreach (Media m in appMedia.FindByMediaType(type))
-                {
-                    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
-                }
+                //foreach (Media m in appMedia.FindByMediaType(type))
+                //{
+                //    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
+                //}
 
-                foreach (var item in mediasList)
-                {
-                    var loan = appLoan.FindById(item.LoanId);
+                //foreach (var item in mediasList)
+                //{
+                //    var loan = appLoan.FindById(item.LoanId);
 
-                    var x = new ItemModelConsultation()
-                    {
-                        Id = item.Id,
-                        Title = item.Title,
-                        ItemType = item.ItemType,
-                        Genre = item.Genre,
-                        RegisterDate = item.RegisterDate,
-                        ReleaseDate = item.ReleaseDate,
-                        Loaned = loan.Loaned
-                    };
+                //    var x = new ItemModelConsultation()
+                //    {
+                //        Id = item.Id,
+                //        Title = item.Title,
+                //        ItemType = item.ItemType,
+                //        Genre = item.Genre,
+                //        RegisterDate = item.RegisterDate,
+                //        ReleaseDate = item.ReleaseDate,
+                //        Loaned = loan.Loaned
+                //    };
 
-                    itemsList.Add(x);
-                }
+                //    itemsList.Add(x);
+                //}
 
-                return Request.CreateResponse(HttpStatusCode.OK, itemsList);
+                return Request.CreateResponse(HttpStatusCode.OK/*, itemsList*/);
             }
             catch (Exception ex)
             {

@@ -4,52 +4,52 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Project.Infra.Repository.Configurations
 {
-    public class MediaConfiguration : EntityTypeConfiguration<Media>
+    public class MediaConfiguration //: EntityTypeConfiguration<Media>
     {
         public MediaConfiguration()
         {
-            #region ' PK '
+            //#region ' PK '
 
-            HasKey(m => m.Id);
+            //HasKey(m => m.Id);
 
-            Property(m => m.Id)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            //Property(m => m.Id)
+            //    .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            #endregion
+            //#endregion
 
-            #region ' Properties '
+            //#region ' Properties '
 
-            Property(m => m.Title)
-                .HasMaxLength(100)
-                .IsRequired();
+            //Property(m => m.Title)
+            //    .HasMaxLength(100)
+            //    .IsRequired();
 
-            Property(m => m.RegisterDate)
-                .IsRequired();
+            //Property(m => m.RegisterDate)
+            //    .IsRequired();
 
-            Property(m => m.ReleaseDate)
-                .IsRequired();
+            //Property(m => m.ReleaseDate)
+            //    .IsRequired();
 
-            Property(m => m.ItemType)
-                .IsRequired();
+            //Property(m => m.ItemType)
+            //    .IsRequired();
 
-            Property(m => m.Genre)
-                .IsRequired();
+            //Property(m => m.Genre)
+            //    .IsRequired();
 
-            Property(m => m.MediaType)
-                .IsRequired();
+            //Property(m => m.MediaType)
+            //    .IsRequired();
 
-            Property(m => m.LoanId)
-                .IsRequired();
+            //Property(m => m.LoanId)
+            //    .IsRequired();
 
-            #endregion
+            //#endregion
 
-            #region ' Relationships '
+            //#region ' Relationships '
 
-            HasRequired(m => m.Loan)
-                .WithMany(l => l.Medias)
-                .HasForeignKey(m => m.LoanId);
+            //HasRequired(m => m.Loan)
+            //    .WithMany(l => l.Medias)
+            //    .HasForeignKey(m => m.LoanId);
 
-            #endregion
+            //#endregion
         }
     }
 }

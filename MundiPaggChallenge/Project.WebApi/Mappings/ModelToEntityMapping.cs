@@ -21,22 +21,22 @@ namespace Project.WebApi.Mappings
 
             #region ' Loan '
 
-            Mapper.CreateMap<LoanModelRegister, Loan>();
-            Mapper.CreateMap<LoanModelEdition, Loan>();
+            //Mapper.CreateMap<LoanModelRegister, Loan>();
+            //Mapper.CreateMap<LoanModelEdition, Loan>();
 
             #endregion
 
             #region ' Book '
 
-            Mapper.CreateMap<BookModelRegister, Book>();
-            Mapper.CreateMap<BookModelEdition, Book>();
+            //Mapper.CreateMap<BookModelRegister, Book>();
+            //Mapper.CreateMap<BookModelEdition, Book>();
 
             #endregion
 
             #region ' Media '
 
-            Mapper.CreateMap<MediaModelRegister, Media>();
-            Mapper.CreateMap<MediaModelEdition, Media>();
+            //Mapper.CreateMap<MediaModelRegister, Media>();
+            //Mapper.CreateMap<MediaModelEdition, Media>();
 
             #endregion
         }

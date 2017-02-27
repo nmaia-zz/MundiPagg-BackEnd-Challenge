@@ -20,19 +20,19 @@ namespace Project.WebApi.Mappings
 
             #region ' Loan '
 
-            Mapper.CreateMap<Loan, LoanModelConsultation>();
+            //Mapper.CreateMap<Loan, LoanModelConsultation>();
 
             #endregion
 
             #region ' Book '
 
-            Mapper.CreateMap<Book, BookModelConsultation>();
+            //Mapper.CreateMap<Book, BookModelConsultation>();
 
             #endregion
 
             #region ' Media '
 
-            Mapper.CreateMap<Media, MediaModelConsultation>();
+            //Mapper.CreateMap<Media, MediaModelConsultation>();
 
             #endregion
         }

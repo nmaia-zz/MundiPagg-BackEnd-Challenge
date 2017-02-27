@@ -4,7 +4,7 @@ using System;
 
 namespace Project.Infra.Repository.Repositories
 {
-    public class LoanRepository : BaseRepository<Loan, Guid>, ILoanRepository
+    public class LoanRepository //: BaseRepository<Loan, Guid>, ILoanRepository
     {
 
     }

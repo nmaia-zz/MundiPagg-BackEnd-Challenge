@@ -4,33 +4,33 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Project.Infra.Repository.Configurations
 {
-    public class LoanConfiguration : EntityTypeConfiguration<Loan>
+    public class LoanConfiguration //: EntityTypeConfiguration<Loan>
     {
         public LoanConfiguration()
         {
-            #region ' PK '
+            //#region ' PK '
 
-            HasKey(l => l.Id);
+            //HasKey(l => l.Id);
 
-            Property(l => l.Id)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            //Property(l => l.Id)
+            //    .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            #endregion
+            //#endregion
 
-            #region ' Properties '
+            //#region ' Properties '
 
-            Property(l => l.Loaned)
-                .IsRequired();
+            //Property(l => l.Loaned)
+            //    .IsRequired();
 
-            #endregion
+            //#endregion
 
-            #region ' Relationships '
+            //#region ' Relationships '
 
-            HasOptional(l => l.Person)
-                .WithMany(p => p.Loans)
-                .HasForeignKey(l => l.PersonId);
+            //HasOptional(l => l.Person)
+            //    .WithMany(p => p.Loans)
+            //    .HasForeignKey(l => l.PersonId);
 
-            #endregion
+            //#endregion
         }
     }
 }

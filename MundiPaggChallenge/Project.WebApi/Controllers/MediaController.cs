@@ -28,22 +28,22 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    Loan l = new Loan();
-                    appLoan.Insert(l);
+                //if (ModelState.IsValid)
+                //{
+                //    Loan l = new Loan();
+                //    appLoan.Insert(l);
 
-                    Media m = Mapper.Map<MediaModelRegister, Media>(model);
-                    m.Loan = l;
+                //    Media m = Mapper.Map<MediaModelRegister, Media>(model);
+                //    m.Loan = l;
 
-                    appMedia.Insert(m);
+                //    appMedia.Insert(m);
 
                     return Request.CreateResponse(HttpStatusCode.OK);
-                }
-                else
-                {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
-                }
+                //}
+                //else
+                //{
+                //    return Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
+                //}
             }
             catch (Exception ex)
             {
@@ -57,17 +57,17 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    Media m = Mapper.Map<MediaModelEdition, Media>(model);
-                    appMedia.Update(m);
+                //if (ModelState.IsValid)
+                //{
+                //    Media m = Mapper.Map<MediaModelEdition, Media>(model);
+                //    appMedia.Update(m);
 
                     return Request.CreateResponse(HttpStatusCode.OK);
-                }
-                else
-                {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
-                }
+                //}
+                //else
+                //{
+                //    return Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
+                //}
             }
             catch (Exception ex)
             {
@@ -81,18 +81,18 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                Media m = appMedia.FindById(id);
+                //Media m = appMedia.FindById(id);
 
-                if(m != null)
-                {
-                    appMedia.Delete(m);
+                //if(m != null)
+                //{
+                //    appMedia.Delete(m);
 
                     return Request.CreateResponse(HttpStatusCode.OK);
-                }
-                else
-                {
-                    throw new Exception("Media not found.");
-                }
+                //}
+                //else
+                //{
+                //    throw new Exception("Media not found.");
+                //}
             }
             catch (Exception ex)
             {
@@ -106,14 +106,14 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                var mediasList = new List<MediaModelConsultation>();
+                //var mediasList = new List<MediaModelConsultation>();
 
-                foreach (Media m in appMedia.FindAll())
-                {
-                    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
-                }
+                //foreach (Media m in appMedia.FindAll())
+                //{
+                //    mediasList.Add(Mapper.Map<Media, MediaModelConsultation>(m));
+                //}
 
-                return Request.CreateResponse(HttpStatusCode.OK, mediasList);
+                return Request.CreateResponse(HttpStatusCode.OK/*, mediasList*/);
             }
             catch (Exception ex)
             {
@@ -127,18 +127,18 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                Media m = appMedia.FindById(id);
+                //Media m = appMedia.FindById(id);
 
-                if (m != null)
-                {
-                    var model = Mapper.Map<Media, MediaModelConsultation>(m);
+                //if (m != null)
+                //{
+                //    var model = Mapper.Map<Media, MediaModelConsultation>(m);
 
-                    return Request.CreateResponse(HttpStatusCode.OK, model);
-                }
-                else
-                {
-                    throw new Exception("Media not found.");
-                }
+                    return Request.CreateResponse(HttpStatusCode.OK/*, model*/);
+                //}
+                //else
+                //{
+                //    throw new Exception("Media not found.");
+                //}
             }
             catch (Exception ex)
             {
@@ -150,13 +150,13 @@ namespace Project.WebApi.Controllers
         {
             var errorsList = new List<string>();
 
-            foreach (var state in ModelState)
-            {
-                foreach (var error in state.Value.Errors)
-                {
-                    errorsList.Add(error.ErrorMessage);
-                }
-            }
+            //foreach (var state in ModelState)
+            //{
+            //    foreach (var error in state.Value.Errors)
+            //    {
+            //        errorsList.Add(error.ErrorMessage);
+            //    }
+            //}
 
             return errorsList;
         }
@@ -164,7 +164,7 @@ namespace Project.WebApi.Controllers
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-            appMedia.Dispose();
+            //appMedia.Dispose();
         }
     }
 }

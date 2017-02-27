@@ -52,7 +52,10 @@
     <Compile Include="Services\MediaApplicationService.cs" />
     <Compile Include="Services\PersonApplicationService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Contracts\ElasticSearch\" />
+    <Folder Include="Services\ElasticSearch\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project.Domain\Project.Domain.csproj">
       <Project>{76523fa7-4e33-44b8-b053-14032cfd082f}</Project>

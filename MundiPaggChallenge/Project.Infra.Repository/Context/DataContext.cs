@@ -22,17 +22,17 @@ namespace Project.Infra.Repository.Context
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            modelBuilder.Configurations.Add(new BookConfiguration());
-            modelBuilder.Configurations.Add(new LoanConfiguration());
-            modelBuilder.Configurations.Add(new MediaConfiguration());
+            //modelBuilder.Configurations.Add(new BookConfiguration());
+            //modelBuilder.Configurations.Add(new LoanConfiguration());
+            //modelBuilder.Configurations.Add(new MediaConfiguration());
             modelBuilder.Configurations.Add(new PersonConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Book> Books { get; set; }
-        public DbSet<Loan> Loans { get; set; }
-        public DbSet<Media> Medias { get; set; }
+        //public DbSet<Book> Books { get; set; }
+        //public DbSet<Loan> Loans { get; set; }
+        //public DbSet<Media> Medias { get; set; }
         public DbSet<Person> Persons { get; set; }
     }
 

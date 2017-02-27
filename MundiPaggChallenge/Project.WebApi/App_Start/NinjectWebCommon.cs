@@ -85,9 +85,9 @@ namespace Project.WebApi.App_Start
 
             kernel.Bind(typeof(IBaseDomainService<,>)).To(typeof(BaseDomainService<,>));
             kernel.Bind(typeof(IPersonDomainService)).To(typeof(PersonDomainService));
-            kernel.Bind(typeof(ILoanDomainService)).To(typeof(LoanDomainService));
-            kernel.Bind(typeof(IBookDomainService)).To(typeof(BookDomainService));
-            kernel.Bind(typeof(IMediaDomainService)).To(typeof(MediaDomainService));
+            //kernel.Bind(typeof(ILoanDomainService)).To(typeof(LoanDomainService));
+            //kernel.Bind(typeof(IBookDomainService)).To(typeof(BookDomainService));
+            //kernel.Bind(typeof(IMediaDomainService)).To(typeof(MediaDomainService));
 
             #endregion
 
@@ -95,9 +95,9 @@ namespace Project.WebApi.App_Start
             
             kernel.Bind(typeof(IBaseRepository<,>)).To(typeof(BaseRepository<,>));
             kernel.Bind(typeof(IPersonRepository)).To(typeof(PersonRepository));
-            kernel.Bind(typeof(ILoanRepository)).To(typeof(LoanRepository));
+            //kernel.Bind(typeof(ILoanRepository)).To(typeof(LoanRepository));
             kernel.Bind(typeof(IBookRepository)).To(typeof(BookRepository));
-            kernel.Bind(typeof(IMediaRepository)).To(typeof(MediaRepository));
+            //kernel.Bind(typeof(IMediaRepository)).To(typeof(MediaRepository));
 
             #endregion
         }        

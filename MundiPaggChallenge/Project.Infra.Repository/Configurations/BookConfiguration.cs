@@ -5,62 +5,62 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project.Infra.Repository.Configurations
 {
-    public class BookConfiguration : EntityTypeConfiguration<Book>
+    public class BookConfiguration //: EntityTypeConfiguration<Book>
     {
         #region ' Constructor '
 
         public BookConfiguration()
         {
-            #region ' PK '
+        //    #region ' PK '
 
-            HasKey(b => b.Id);
+        //    HasKey(b => b.Id);
 
-            Property(b => b.Id)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+        //    Property(b => b.Id)
+        //        .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            #endregion
+        //    #endregion
 
-            #region ' Properties '
+        //    #region ' Properties '
 
-            Property(b => b.Title)
-                .HasMaxLength(100)
-                .IsRequired();
+        //    Property(b => b.Title)
+        //        .HasMaxLength(100)
+        //        .IsRequired();
 
-            Property(b => b.RegisterDate)
-                .IsRequired();
+        //    Property(b => b.RegisterDate)
+        //        .IsRequired();
 
-            Property(b => b.ReleaseDate)
-                .IsRequired();
+        //    Property(b => b.ReleaseDate)
+        //        .IsRequired();
 
-            Property(b => b.ItemType)
-                .IsRequired();
+        //    Property(b => b.ItemType)
+        //        .IsRequired();
 
-            Property(b => b.Author)
-                .HasMaxLength(100)
-                .IsRequired();
+        //    Property(b => b.Author)
+        //        .HasMaxLength(100)
+        //        .IsRequired();
 
-            Property(b => b.Pages)
-                .IsRequired();
+        //    Property(b => b.Pages)
+        //        .IsRequired();
 
-            Property(b => b.PublishingCompany)
-                .HasMaxLength(100)
-                .IsRequired();
+        //    Property(b => b.PublishingCompany)
+        //        .HasMaxLength(100)
+        //        .IsRequired();
 
-            Property(b => b.Genre)
-                .IsRequired();
+        //    Property(b => b.Genre)
+        //        .IsRequired();
 
-            Property(b => b.LoanId)
-                .IsRequired();
+        //    Property(b => b.LoanId)
+        //        .IsRequired();
 
-            #endregion
+        //    #endregion
 
-            #region ' Relationships '
+        //    #region ' Relationships '
 
-            HasRequired(b => b.Loan)
-                .WithMany(l => l.Books)
-                .HasForeignKey(b => b.LoanId);
+        //    HasRequired(b => b.Loan)
+        //        .WithMany(l => l.Books)
+        //        .HasForeignKey(b => b.LoanId);
 
-            #endregion
+        //    #endregion
         }
 
         #endregion

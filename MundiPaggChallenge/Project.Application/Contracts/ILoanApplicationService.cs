@@ -3,7 +3,7 @@ using System;
 
 namespace Project.Application.Contracts
 {
-    public interface ILoanApplicationService : IBaseApplicationService<Loan, Guid>
+    public interface ILoanApplicationService //: IBaseApplicationService<Loan, Guid>
     {
 
     }

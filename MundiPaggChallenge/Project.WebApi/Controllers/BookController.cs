@@ -30,13 +30,13 @@ namespace Project.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Loan l = new Loan();
-                    appLoan.Insert(l);
+                    //Loan l = new Loan();
+                    //appLoan.Insert(l);
 
-                    Book b = Mapper.Map<BookModelRegister, Book>(model);
-                    b.Loan = l;
+                    //Book b = Mapper.Map<BookModelRegister, Book>(model);
+                    //b.Loan = l;
 
-                    appBook.Insert(b);
+                    //appBook.Insert(b);
 
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }
@@ -57,17 +57,17 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    Book b = Mapper.Map<BookModelEdition, Book>(model);
-                    appBook.Update(b);
+                //if (ModelState.IsValid)
+                //{
+                //    Book b = Mapper.Map<BookModelEdition, Book>(model);
+                //    appBook.Update(b);
 
-                    return Request.CreateResponse(HttpStatusCode.OK);
-                }
-                else
-                {
+                //    return Request.CreateResponse(HttpStatusCode.OK);
+                //}
+                //else
+                //{
                     return Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
-                }
+                //}
             }
             catch (Exception ex)
             {
@@ -81,18 +81,18 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                Book b = appBook.FindById(id);
+                //Book b = appBook.FindById(id);
 
-                if (b != null)
-                {
-                    appBook.Delete(b);
+                //if (b != null)
+                //{
+                //    appBook.Delete(b);
 
                     return Request.CreateResponse(HttpStatusCode.OK);
-                }
-                else
-                {
-                    throw new Exception("Book not found.");
-                }
+                //}
+                //else
+                //{
+                //    throw new Exception("Book not found.");
+                //}
             }
             catch (Exception ex)
             {
@@ -106,14 +106,14 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                var booksList = new List<BookModelConsultation>();
+                //var booksList = new List<BookModelConsultation>();
 
-                foreach (Book b in appBook.FindAll())
-                {
-                    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
-                }
+                //foreach (Book b in appBook.FindAll())
+                //{
+                //    booksList.Add(Mapper.Map<Book, BookModelConsultation>(b));
+                //}
 
-                return Request.CreateResponse(HttpStatusCode.OK, booksList);
+                return Request.CreateResponse(HttpStatusCode.OK/*, booksList*/);
             }
             catch (Exception ex)
             {
@@ -127,18 +127,18 @@ namespace Project.WebApi.Controllers
         {
             try
             {
-                Book b = appBook.FindById(id);
+                //Book b = appBook.FindById(id);
 
-                if (b != null)
-                {
-                    var model = Mapper.Map<Book, BookModelConsultation>(b);
+                //if (b != null)
+                //{
+                //    var model = Mapper.Map<Book, BookModelConsultation>(b);
 
-                    return Request.CreateResponse(HttpStatusCode.OK, model);
-                }
-                else
-                {
-                    throw new Exception("Book not found.");
-                }
+                    return Request.CreateResponse(HttpStatusCode.OK/*, model*/);
+                //}
+                //else
+                //{
+                //    throw new Exception("Book not found.");
+                //}
             }
             catch (Exception ex)
             {
@@ -164,7 +164,7 @@ namespace Project.WebApi.Controllers
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-            appBook.Dispose();
+            //appBook.Dispose();
         }
     }
 }

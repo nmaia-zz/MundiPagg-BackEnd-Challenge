@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientProvider\BaseElasticSearchClientProvider.cs" />
+    <Compile Include="ESClientProvider\BaseElasticSearchClientProvider.cs" />
+    <Compile Include="ESClientProvider\ItemElasticSearchClientProvider.cs" />
+    <Compile Include="ESClientProvider\PersonElasticSearchClientProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
