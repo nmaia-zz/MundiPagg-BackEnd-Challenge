@@ -17,9 +17,9 @@ In this project we chose to use [DDD (Domain Driven Design)](https://en.wikipedi
 
 # UML
 
-### POCO (Plain Old C# Object) - Class Diagram v.1.4
+### POCO (Plain Old C# Object) - Class Diagram v.2.0
 
-![Class Diagram v1.0](https://github.com/nmaia/MundiPagg-BackEnd-Challenge/blob/master/Images/UML/ClassDiagram_1.4.png)
+![Class Diagram v1.0](https://github.com/nmaia/MundiPagg-BackEnd-Challenge/blob/master/Images/UML/ClassDiagram_2.png)
 
 I hope this code can be useful to you, as it is for me. :metal:
 
