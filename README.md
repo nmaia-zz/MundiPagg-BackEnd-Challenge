@@ -8,7 +8,7 @@ In this repository we'll develop a very small system using the following stack:
 * [C# .Net](https://msdn.microsoft.com/en-us/library/kx37x362.aspx) (as the back-end language);
 * [Web API](https://msdn.microsoft.com/en-us/library/hh833994(v=vs.108).aspx) (using the Restful concept);
 * [Angular](https://angularjs.org/) (a JavaScript framework for the front-end);
-* [Entity Framework](https://msdn.microsoft.com/en-us/library/gg696172(v=vs.103).aspx) (ORM - Object-Relational Mapping)
+* [Entity Framework](https://msdn.microsoft.com/en-us/library/gg696172(v=vs.103).aspx) (ORM - Object-Relational Mapping) `working until the commit` [81e6046](https://github.com/nmaia/MundiPagg-BackEnd-Challenge/tree/81e60466ecb82221bfbd0569797a05cfb43f8349)
 * [ElasticSearch](https://www.elastic.co/) (a data search engine).
 
 # Development Approach
