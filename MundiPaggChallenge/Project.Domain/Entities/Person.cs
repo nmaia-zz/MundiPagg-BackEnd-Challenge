@@ -36,7 +36,7 @@ namespace Project.Domain.Entities
 
         //public virtual ICollection<Loan> Loans { get; set; }
 
-        public ICollection<Item> Items { get; set; }
+        public virtual ICollection<Item> Items { get; set; }
 
         #endregion
     }

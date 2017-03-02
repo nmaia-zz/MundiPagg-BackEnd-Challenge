@@ -3,7 +3,7 @@ using System;
 
 namespace Project.Domain.Entities
 {
-    public abstract class Item
+    public class Item
     {
         #region ' Properties '
 

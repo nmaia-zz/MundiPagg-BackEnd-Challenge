@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\ElasticSearch\IBaseElasticSearchApplicationService.cs" />
+    <Compile Include="Contracts\ElasticSearch\IItemElasticSearchApplicationService.cs" />
+    <Compile Include="Contracts\ElasticSearch\IPersonElasticSearchApplicationService.cs" />
     <Compile Include="Contracts\IBaseApplicationService.cs" />
     <Compile Include="Contracts\IBookApplicationService.cs" />
     <Compile Include="Contracts\ILoanApplicationService.cs" />
@@ -48,14 +51,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaseApplicationService.cs" />
     <Compile Include="Services\BookApplicationService.cs" />
+    <Compile Include="Services\ElasticSearch\BaseElasticSearchApplicationService.cs" />
+    <Compile Include="Services\ElasticSearch\ItemElasticSearchApplicationService.cs" />
+    <Compile Include="Services\ElasticSearch\PersonElasticSearchApplicationService.cs" />
     <Compile Include="Services\LoanApplicationService.cs" />
     <Compile Include="Services\MediaApplicationService.cs" />
     <Compile Include="Services\PersonApplicationService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Contracts\ElasticSearch\" />
-    <Folder Include="Services\ElasticSearch\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Project.Domain\Project.Domain.csproj">
       <Project>{76523fa7-4e33-44b8-b053-14032cfd082f}</Project>
