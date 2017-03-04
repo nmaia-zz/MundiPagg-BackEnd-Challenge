@@ -227,6 +227,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\ElasticSearch\PersonElasticSearchController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\LoanController.cs" />
     <Compile Include="Controllers\MediaController.cs" />
@@ -238,6 +239,7 @@
     <Compile Include="Mappings\EntityToModelMapping.cs" />
     <Compile Include="Mappings\ModelToEntityMapping.cs" />
     <Compile Include="Models\BookModel.cs" />
+    <Compile Include="Models\ElasticSearch\PersonElasticSearchModel.cs" />
     <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Models\LoanModel.cs" />
     <Compile Include="Models\MediaModel.cs" />
