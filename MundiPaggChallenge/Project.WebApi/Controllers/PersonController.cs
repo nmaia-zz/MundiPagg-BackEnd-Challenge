@@ -20,31 +20,31 @@ namespace Project.WebApi.Controllers
             this.appPerson = appPerson;
         } 
 
-        [HttpPost]
-        [Route("register")] //url: /api/person/register
-        public HttpResponseMessage Post(PersonModelRegister model)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {                   
+        //[HttpPost]
+        //[Route("register")] //url: /api/person/register
+        //public HttpResponseMessage Post(PersonModelRegister model)
+        //{
+        //    try
+        //    {
+        //        if (ModelState.IsValid)
+        //        {
 
-                    Person p = Mapper.Map<PersonModelRegister, Person>(model);
-                    
-                    appPerson.Insert(p);
+        //            Person p = Mapper.Map<PersonModelRegister, Person>(model);
 
-                    return Request.CreateResponse(HttpStatusCode.OK);
-                }
-                else
-                {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
-                }
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
-            }
-        }
+        //            appPerson.Insert(p);
+
+        //            return Request.CreateResponse(HttpStatusCode.OK);
+        //        }
+        //        else
+        //        {
+        //            return Request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+        //    }
+        //}
 
         [HttpPut]
         [Route("edition")] //url: /api/person/edition

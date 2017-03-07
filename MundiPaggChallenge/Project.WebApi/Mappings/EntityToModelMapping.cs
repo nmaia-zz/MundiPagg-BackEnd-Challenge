@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Project.Domain.Entities;
 using Project.WebApi.Models;
+using Project.WebApi.Models.ElasticSearch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Project.WebApi.Mappings
         {
             #region ' Person '
 
-            Mapper.CreateMap<Person, PersonModelConsultation>();
+            Mapper.CreateMap<Person, PersonConsultationElasticSearchModel>();
 
             #endregion
 

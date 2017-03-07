@@ -18,6 +18,12 @@ namespace Project.WebApi.App_Start
     using Domain.Services;
     using Domain.Contracts.Repositories;
     using Infra.Repository.Repositories;
+    using Application.Contracts.ElasticSearch;
+    using Application.Services.ElasticSearch;
+    using Domain.Contracts.Services.ElasticSearch;
+    using Domain.Services.ElasticSearch;
+    using Domain.Contracts.ESClientProvider;
+    using Infra.Repository.ElasticSearch;
 
     public static class NinjectWebCommon 
     {
@@ -73,18 +79,18 @@ namespace Project.WebApi.App_Start
         {
             #region ' Application Layer'
 
-            kernel.Bind(typeof(IBaseApplicationService<,>)).To(typeof(BaseApplicationService<,>));
-            kernel.Bind(typeof(IPersonApplicationService)).To(typeof(PersonApplicationService));
-            kernel.Bind(typeof(ILoanApplicationService)).To(typeof(LoanApplicationService));
-            kernel.Bind(typeof(IBookApplicationService)).To(typeof(BookApplicationService));
-            kernel.Bind(typeof(IMediaApplicationService)).To(typeof(MediaApplicationService));
+            kernel.Bind(typeof(IBaseElasticSearchApplicationService<>)).To(typeof(BaseElasticSearchApplicationService<>));
+            kernel.Bind(typeof(IPersonElasticSearchApplicationService)).To(typeof(PersonElasticSearchApplicationService));
+            //kernel.Bind(typeof(ILoanApplicationService)).To(typeof(LoanApplicationService));
+            //kernel.Bind(typeof(IBookApplicationService)).To(typeof(BookApplicationService));
+            //kernel.Bind(typeof(IMediaApplicationService)).To(typeof(MediaApplicationService));
 
             #endregion
 
             #region ' Domain Layer '
 
-            kernel.Bind(typeof(IBaseDomainService<,>)).To(typeof(BaseDomainService<,>));
-            kernel.Bind(typeof(IPersonDomainService)).To(typeof(PersonDomainService));
+            kernel.Bind(typeof(IBaseDomainElasticSearchService<>)).To(typeof(BaseDomainElasticSearchService<>));
+            kernel.Bind(typeof(IPersonDomainElasticSearchService)).To(typeof(PersonDomainElasticSearchService));
             //kernel.Bind(typeof(ILoanDomainService)).To(typeof(LoanDomainService));
             //kernel.Bind(typeof(IBookDomainService)).To(typeof(BookDomainService));
             //kernel.Bind(typeof(IMediaDomainService)).To(typeof(MediaDomainService));
@@ -92,11 +98,12 @@ namespace Project.WebApi.App_Start
             #endregion
 
             #region ' Infra Layer '
-            
-            kernel.Bind(typeof(IBaseRepository<,>)).To(typeof(BaseRepository<,>));
-            kernel.Bind(typeof(IPersonRepository)).To(typeof(PersonRepository));
+
+            kernel.Bind(typeof(IBaseElasticSearchClientProvider<>)).To(typeof(BaseElasticSearchClientProvider<>));
+            kernel.Bind(typeof(IPersonElasticSearchClientProvider)).To(typeof(PersonElasticSearchClientProvider));
+            kernel.Bind(typeof(IItemElasticSearchClientProvider)).To(typeof(ItemElasticSearchClientProvider));
             //kernel.Bind(typeof(ILoanRepository)).To(typeof(LoanRepository));
-            kernel.Bind(typeof(IBookRepository)).To(typeof(BookRepository));
+            //kernel.Bind(typeof(IBookRepository)).To(typeof(BookRepository));
             //kernel.Bind(typeof(IMediaRepository)).To(typeof(MediaRepository));
 
             #endregion

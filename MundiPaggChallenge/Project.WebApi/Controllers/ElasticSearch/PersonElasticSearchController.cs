@@ -1,4 +1,6 @@
-﻿using Project.Application.Contracts.ElasticSearch;
+﻿using AutoMapper;
+using Project.Application.Contracts.ElasticSearch;
+using Project.Domain.Entities;
 using Project.WebApi.Models.ElasticSearch;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Web.Http;
 
 namespace Project.WebApi.Controllers.ElasticSearch
 {
-    [RoutePrefix("api/person")]
+    [RoutePrefix("api/elasticsearch/person")]
     public class PersonElasticSearchController : ApiController
     {
         private readonly IPersonElasticSearchApplicationService _elasticSerarchAppServicePerson;
@@ -19,16 +21,16 @@ namespace Project.WebApi.Controllers.ElasticSearch
         }
 
         [HttpPost]
-        [Route("register")] //url: /api/person/register
+        [Route("register")] //url: /api/elasticsearch/person/register
         public HttpResponseMessage Post(PersonRegisterElasticSearchModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    //ToDo: make some adjusts in the automapper for item and person
-                    //ToDo: create the properties in the person model
-                    //ToDo: use the insert method (from elastic search app service) to create the person index and register the data in elastic search
+                    Person p = Mapper.Map<PersonRegisterElasticSearchModel, Person>(model);
+
+                    _elasticSerarchAppServicePerson.Insert(p);
 
                     return Request.CreateResponse(HttpStatusCode.OK, "Person has been registred.");
                 }
